@@ -1,5 +1,4 @@
 import { Instagram, Linkedin, Twitter, Mail, MapPin } from 'lucide-react';
-
 export default function Footer() {
   return (
     <footer className="py-16 border-t border-muted bg-white">
@@ -14,7 +13,7 @@ export default function Footer() {
               Empowering Gujarat University students with high-quality, affordable study materials. Learn. Grow.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
+              <a href="https://instagram.com/ydappofficial" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
@@ -25,7 +24,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
           <div>
             <h4 className="font-bold text-navy mb-6 font-display text-lg">Quick Links</h4>
             <ul className="space-y-4 text-sm text-muted-foreground font-medium">
@@ -36,16 +34,14 @@ export default function Footer() {
               <li><a href="#" className="hover:text-primary transition-colors">Student Lounge</a></li>
             </ul>
           </div>
-
           <div>
             <h4 className="font-bold text-navy mb-6 font-display text-lg">Legal</h4>
             <ul className="space-y-4 text-sm text-muted-foreground font-medium">
-              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><a href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Refund Policy</a></li>
             </ul>
           </div>
-
           <div>
             <h4 className="font-bold text-navy mb-6 font-display text-lg">Contact</h4>
             <ul className="space-y-4 text-sm text-muted-foreground font-medium">
@@ -60,7 +56,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
         <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground font-medium">
           <p>© 2026 YD Publication. All rights reserved.</p>
           <p>Made with <span className="text-red-500">❤️</span> for Students</p>
