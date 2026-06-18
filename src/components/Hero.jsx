@@ -44,9 +44,20 @@ export default function Hero() {
                 <p className="text-base font-medium text-navy mb-2">
                   ✅ App is live on <span className="text-primary font-bold">Google Play Store</span>
                 </p>
-                <p className="text-base font-medium text-muted-foreground">
+                <p className="text-base font-medium text-muted-foreground mb-6">
                   🍎 Coming soon on <span className="font-semibold text-navy">Apple App Store</span>
                 </p>
+                <a
+                  href="https://play.google.com/store/apps/details?id=in.ydapp.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 w-full bg-navy text-white font-bold text-base py-3 px-6 rounded-xl hover:bg-primary transition-colors shadow-md"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0">
+                    <path d="M3.18 23.75a1.5 1.5 0 0 1-.68-.16A1.75 1.75 0 0 1 1.5 22V2A1.75 1.75 0 0 1 3 .41L14.09 6.5 3.18 23.75zm1.32-20.6v17.7L13.13 12 4.5 3.15zM15.5 7.59l2.8 1.62-2.8 1.62V7.59zm0 9.2v-3.24l2.8 1.62-2.8 1.62zm4.32-4.79L22 13.41a1 1 0 0 1 0 1.72l-2.18 1.26-3.32-1.92 3.32-1.47zM14.09 6.5 16.27 7.76 4.5 3.15 14.09 6.5zm0 11 2.18 1.26L4.5 20.85l9.59-3.35z"/>
+                  </svg>
+                  Download on Google Play
+                </a>
               </div>
             </div>
           </div>
@@ -75,13 +86,13 @@ export default function Hero() {
         <div className="container mx-auto max-w-7xl px-4 md:px-8">
           <div className="flex flex-col md:flex-row justify-around items-center gap-8 text-center md:text-left">
             <div className="space-y-1">
-              <p className="text-primary font-display font-bold text-4xl">600+</p>
-              <p className="text-white/60 text-base uppercase tracking-widest">Students Bought</p>
+              <p className="text-primary font-display font-bold text-4xl">900+</p>
+              <p className="text-white/60 text-sm uppercase tracking-widest">Students Bought</p>
             </div>
             <div className="h-12 w-px bg-white/10 hidden md:block"></div>
             <div className="space-y-1">
               <p className="text-primary font-display font-bold text-4xl">100%</p>
-              <p className="text-white/60 text-base uppercase tracking-widest">Syllabus Covered</p>
+              <p className="text-white/60 text-sm uppercase tracking-widest">Syllabus Covered</p>
             </div>
           </div>
         </div>
