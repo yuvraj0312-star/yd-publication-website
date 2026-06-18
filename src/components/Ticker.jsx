@@ -4,7 +4,6 @@ export default function Ticker({ items =[] }) {
   const data = items.length ? items :[
     { text: '🛡️ Trusted by many GU Students — Per semester B.Com books & study material at just ₹125' },
     { text: '🛡️ Trusted by many GU Students — All 6 semester B.Com books & study material at just ₹500' },
-    { text: '🛡️ Trusted by many GU Students — Per semester B.Com books & study material at just ₹125' },
     { text: '' }
   ];
   
