@@ -12,9 +12,9 @@ export default function Ticker() {
     }}>
       <span style={{ fontSize: '14px', fontWeight: '700', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
         <Bell size={16} />
-        🛡️ Trusted by many GU Students — Per semester B.Com books &amp; study material at just ₹125 &nbsp;&nbsp;|&nbsp;&nbsp;
+        Per semester B.Com books &amp; study material at just ₹125 &nbsp;&nbsp;|&nbsp;&nbsp;
         <Bell size={16} />
-        🛡️ Trusted by many GU Students — All 6 semester B.Com books &amp; study material at just ₹500
+        All 6 semester B.Com books &amp; study material at just ₹500
       </span>
     </div>
   );
