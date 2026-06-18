@@ -1,4 +1,6 @@
 import { Instagram, Linkedin, Twitter, Mail, MapPin } from 'lucide-react';
+import logo from '../assets/logo.svg';
+
 export default function Footer() {
   return (
     <footer className="py-16 border-t border-muted bg-white">
@@ -6,14 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
             <div className="flex items-center gap-2 font-bold text-xl font-display">
-              <div className="flex h-8 w-8 items-center justify-center rounded bg-navy text-white text-sm">YD</div>
+              <img src={logo} alt="YD Publication Logo" className="h-8 w-8 rounded" />
               <span className="text-navy">YD Publication</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed pr-4">
               Empowering Gujarat University students with high-quality, affordable study materials. Learn. Grow.
             </p>
             <div className="flex gap-4">
-              <a href="https://instagram.com/ydappofficial" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
+              <a href="#" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
@@ -24,6 +26,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
+
           <div>
             <h4 className="font-bold text-navy mb-6 font-display text-lg">Quick Links</h4>
             <ul className="space-y-4 text-sm text-muted-foreground font-medium">
@@ -34,14 +37,16 @@ export default function Footer() {
               <li><a href="#" className="hover:text-primary transition-colors">Student Lounge</a></li>
             </ul>
           </div>
+
           <div>
             <h4 className="font-bold text-navy mb-6 font-display text-lg">Legal</h4>
             <ul className="space-y-4 text-sm text-muted-foreground font-medium">
-              <li><a href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Refund Policy</a></li>
             </ul>
           </div>
+
           <div>
             <h4 className="font-bold text-navy mb-6 font-display text-lg">Contact</h4>
             <ul className="space-y-4 text-sm text-muted-foreground font-medium">
@@ -56,6 +61,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
         <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground font-medium">
           <p>© 2026 YD Publication. All rights reserved.</p>
           <p>Made with <span className="text-red-500">❤️</span> for Students</p>
