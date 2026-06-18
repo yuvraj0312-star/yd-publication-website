@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Mail, Instagram, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
-  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [status, setStatus] = useState('idle');
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,9 +16,9 @@ export default function Contact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          service_id: 'YOUR_SERVICE_ID',
-          template_id: 'YOUR_TEMPLATE_ID',
-          user_id: 'YOUR_PUBLIC_KEY',
+          service_id: 'service_lgo3eba',
+          template_id: 'template_8dz3zun',
+          user_id: 'HzMzGJCZFJaCS8DSM',
           template_params: {
             from_name: form.name,
             from_email: form.email,
