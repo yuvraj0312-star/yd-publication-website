@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
+import logo from '../assets/logo.svg';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Navbar() {
     <nav className={`sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md text-navy transition-all duration-300 ${scrolled ? 'shadow-sm' : ''}`}>
       <div className="container mx-auto max-w-7xl flex h-16 items-center justify-between px-4 md:px-8">
         <a href="#" className="flex items-center gap-2 font-bold text-xl font-display">
-          <div className="flex h-8 w-8 items-center justify-center rounded bg-navy text-white text-sm">YD</div>
+          <img src={logo} alt="YD Publication Logo" className="h-8 w-8 rounded" />
           <span className="hidden sm:inline-block">YD Publication</span>
         </a>
         
@@ -28,7 +29,6 @@ export default function Navbar() {
         
         <div className="flex items-center gap-4">
           <a href="#contact" className="hidden sm:block text-sm font-medium text-muted-foreground hover:text-navy transition-colors">Contact</a>
-          <button className="bg-navy text-white hover:bg-navy-light px-5 py-2 rounded-lg text-sm font-semibold transition-all">Get Notified</button>
           <button className="md:hidden text-navy p-2" onClick={() => setOpen(!open)}>
             <Menu className="h-5 w-5" />
           </button>
