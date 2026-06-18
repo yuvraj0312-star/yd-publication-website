@@ -86,7 +86,7 @@ export default function Hero() {
         <div className="container mx-auto max-w-7xl px-4 md:px-8">
           <div className="flex flex-col md:flex-row justify-around items-center gap-8 text-center md:text-left">
             <div className="space-y-1">
-              <p className="text-primary font-display font-bold text-4xl">900+</p>
+              <p className="text-primary font-display font-bold text-4xl">600+</p>
               <p className="text-white/60 text-sm uppercase tracking-widest">Students Bought</p>
             </div>
             <div className="h-12 w-px bg-white/10 hidden md:block"></div>
