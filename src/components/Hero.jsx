@@ -57,12 +57,12 @@ export default function Hero() {
           <div className="container mx-auto max-w-7xl px-4 md:px-8 py-8">
             <div className="grid grid-cols-2 md:grid-cols-2 gap-8">
               <div className="flex flex-col gap-1">
-                <span className="text-2xl md:text-3xl font-display font-extrabold text-navy">₹125 <span className="text-primary text-base font-semibold">/ semester</span></span>
-                <span className="text-xs md:text-sm text-muted-foreground">Any Single Semester · All Subjects · 6 Months Validity</span>
+                <span className="text-3xl md:text-3xl font-display font-extrabold text-navy">₹125 <span className="text-primary text-base font-semibold">/ semester</span></span>
+                <span className="text-base md:text-lg text-muted-foreground">Any Single Semester · All Subjects · 6 Months Validity</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-2xl md:text-3xl font-display font-extrabold text-navy">₹500 <span className="text-primary text-base font-semibold">/ all sems</span></span>
-                <span className="text-xs md:text-sm text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity</span>
+                <span className="text-3xl md:text-3xl font-display font-extrabold text-navy">₹500 <span className="text-primary text-base font-semibold">/ all sems</span></span>
+                <span className="text-base md:text-lg text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity</span>
               </div>
             </div>
           </div>
