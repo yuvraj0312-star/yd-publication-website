@@ -55,28 +55,28 @@ export default function Hero() {
         {/* Pricing Strip */}
         <div className="absolute bottom-0 w-full border-t border-border bg-white/50 backdrop-blur-sm">
           <div className="container mx-auto max-w-7xl px-4 md:px-8 py-5">
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-navy">
-                <span className="font-extrabold text-navy">B.Com</span>
-                <span className="text-muted-foreground">—</span>
-                <span>Any Single Semester</span>
-                <span className="text-muted-foreground">—</span>
-                <span>All Subjects</span>
-                <span className="text-muted-foreground">—</span>
-                <span className="text-primary font-extrabold">₹125</span>
-                <span className="text-muted-foreground">—</span>
-                <span>6 Months Validity</span>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-wrap items-center gap-3 text-base font-semibold text-navy">
+                <span className="font-extrabold text-navy text-lg">B.Com</span>
+                <span className="text-muted-foreground text-lg">—</span>
+                <span className="text-lg">Any Single Semester</span>
+                <span className="text-muted-foreground text-lg">—</span>
+                <span className="text-lg">All Subjects</span>
+                <span className="text-muted-foreground text-lg">—</span>
+                <span className="text-primary font-extrabold text-xl">₹125</span>
+                <span className="text-muted-foreground text-lg">—</span>
+                <span className="text-lg">6 Months Validity</span>
               </div>
-              <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-navy">
-                <span className="font-extrabold text-navy">B.Com</span>
-                <span className="text-muted-foreground">—</span>
-                <span>All Semesters (1 to 6)</span>
-                <span className="text-muted-foreground">—</span>
-                <span>All Subjects</span>
-                <span className="text-muted-foreground">—</span>
-                <span className="text-primary font-extrabold">₹500</span>
-                <span className="text-muted-foreground">—</span>
-                <span>3 Years Validity</span>
+              <div className="flex flex-wrap items-center gap-3 text-base font-semibold text-navy">
+                <span className="font-extrabold text-navy text-lg">B.Com</span>
+                <span className="text-muted-foreground text-lg">—</span>
+                <span className="text-lg">All Semesters (1 to 6)</span>
+                <span className="text-muted-foreground text-lg">—</span>
+                <span className="text-lg">All Subjects</span>
+                <span className="text-muted-foreground text-lg">—</span>
+                <span className="text-primary font-extrabold text-xl">₹500</span>
+                <span className="text-muted-foreground text-lg">—</span>
+                <span className="text-lg">3 Years Validity</span>
               </div>
             </div>
           </div>
