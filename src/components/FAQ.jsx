@@ -6,9 +6,9 @@ export default function FAQ({ faqs = [] }) {
   
   const fallbackFaqs =[
     { question: 'Are these updated for the 2025-26 syllabus?', answer: 'Yes, all our summary books and past paper solutions are strictly based on the latest Gujarat University syllabus for the 2024-25 academic year.' },
-    { question: 'How do I access the PDF after payment?', answer: "Once your payment is verified, the content will be instantly unlocked in your 'My Library' dashboard. You can also access it through the YD App using your registered mobile number." },
-    { question: 'Can I print these notes?', answer: 'Our notes are designed for digital reading within the YD App and website to prevent unauthorized distribution. Printing is currently disabled to protect our original content.' },
-    { question: "How do I pay if I don't have UPI?", answer: 'While UPI is our preferred method, you can contact us via WhatsApp for alternative payment options like Bank Transfer or QR code payment.' }
+    { question: 'How do I access the PDF after payment?', answer: "Once your payment is verified, the content will be instantly unlocked in your dashboard. You can access notes till its validity." },
+    { question: 'Can I print these notes?', answer: 'Our notes are designed for digital reading within the YD App to prevent unauthorized distribution. Printing is currently disabled to protect our original content. and Accessing this via anyway is Illegal under Copyright Act.' },
+    { question: "How do I pay?", answer: 'While UPI is our preferred method' }
   ];
 
   const data = faqs.length ? faqs : fallbackFaqs;
