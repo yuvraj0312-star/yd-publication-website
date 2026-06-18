@@ -67,14 +67,14 @@ export default function AppSection() {
           <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-4">YD App — Live on Google Play Store</h2>
           <h3 className="text-4xl md:text-5xl font-display font-extrabold mb-6 text-navy leading-tight">All your study material. One app.</h3>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            YD App is an Android app purpose-built for Gujarat University B.Com students. Buy access to any semester for just ₹125 and study anytime — with secure, encrypted content.
+            YD App is an Android app (and soon live on Apple App store also), built for Gujarat University B.Com students. Buy access to any semester for just ₹125 and study anytime — with secure, encrypted content.
           </p>
           <ul className="space-y-4 mb-10">
             <li className="flex items-center gap-3">
               <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                 <ChevronRight className="h-3 w-3" />
               </div>
-              <span className="text-navy font-medium">Phone OTP login — no passwords to remember</span>
+              <span className="text-navy font-medium">Email OTP login </span>
             </li>
             <li className="flex items-center gap-3">
               <div className="h-5 w-5 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
