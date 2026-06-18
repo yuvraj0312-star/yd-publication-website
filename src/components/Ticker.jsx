@@ -1,32 +1,27 @@
 import { Bell } from 'lucide-react';
 
-const messages = [
-  '🛡️ Trusted by many GU Students — Per semester B.Com books & study material at just ₹125',
-  '🛡️ Trusted by many GU Students — All 6 semester B.Com books & study material at just ₹500',
-];
-
-export default function Ticker() {
+export default function Ticker({ items =[] }) {
+  const data = items.length ? items :[
+    { text: '🛡️ Trusted by many GU Students — Per semester B.Com books & study material at just ₹125' },
+    { text: '🛡️ Trusted by many GU Students — All 6 semester B.Com books & study material at just ₹500' },
+  ];
+  
   return (
-    <div className="bg-primary text-white py-2 overflow-hidden whitespace-nowrap border-b border-white/10">
-      <div
-        style={{
-          display: 'inline-flex',
-          animation: 'ticker-scroll 30s linear infinite',
-          gap: '80px',
-        }}
-      >
-        {[...messages, ...messages, ...messages].map((msg, i) => (
-          <span key={i} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: 'bold', paddingRight: '80px' }}>
-            <Bell size={16} /> {msg}
-          </span>
+    <div className="bg-primary text-white py-2 overflow-hidden whitespace-nowrap border-b border-white/10 relative flex">
+      <div className="flex animate-marquee gap-12 items-center min-w-full pl-4 pr-12">
+        {data.map((item, i) => (
+          <div key={i} className="flex items-center gap-2 text-sm font-bold">
+            <Bell className="h-4 w-4" /> {item.text}
+          </div>
         ))}
       </div>
-      <style>{`
-        @keyframes ticker-scroll {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-33.33%); }
-        }
-      `}</style>
+      <div className="flex animate-marquee gap-12 items-center min-w-full pl-4 pr-12" aria-hidden="true">
+        {data.map((item, i) => (
+          <div key={`dup-${i}`} className="flex items-center gap-2 text-sm font-bold">
+            <Bell className="h-4 w-4" /> {item.text}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
