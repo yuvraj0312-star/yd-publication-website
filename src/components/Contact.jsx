@@ -14,7 +14,9 @@ export default function Contact() {
     try {
       const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           service_id: 'service_lgo3eba',
           template_id: 'template_8dz3zun',
@@ -23,18 +25,20 @@ export default function Contact() {
             from_name: form.name,
             from_email: form.email,
             message: form.message,
-            to_email: 'support@ydapp.in',
           },
         }),
       });
 
-      if (res.ok) {
+      const text = await res.text();
+      if (res.status === 200 || text === 'OK') {
         setStatus('success');
         setForm({ name: '', email: '', message: '' });
       } else {
+        console.error('EmailJS error:', res.status, text);
         setStatus('error');
       }
-    } catch {
+    } catch (err) {
+      console.error('Fetch error:', err);
       setStatus('error');
     }
   };
@@ -87,7 +91,7 @@ export default function Contact() {
                   <Send className="h-8 w-8 text-green-500" />
                 </div>
                 <h4 className="text-2xl font-bold text-navy mb-2">Message Sent!</h4>
-                <p className="text-muted-foreground">We will get back to you at support@ydapp.in soon.</p>
+                <p className="text-muted-foreground">We will get back to you soon.</p>
                 <button onClick={() => setStatus('idle')} className="mt-6 text-primary font-semibold hover:underline">Send another message</button>
               </div>
             ) : (
