@@ -102,7 +102,7 @@ export default function AppSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-navy text-white hover:bg-navy-light h-14 px-8 text-lg font-bold rounded-xl transition-all shadow-lg hover:shadow-xl"
           >
-            Download on Google Play Store
+            Click here to Download on Google Play Store
           </a>
         </div>
       </div>
