@@ -1,4 +1,4 @@
-import { Smartphone, CheckCircle2 } from 'lucide-react';
+import { Smartphone } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -52,28 +52,31 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Social Proof Strip */}
+        {/* Pricing Strip */}
         <div className="absolute bottom-0 w-full border-t border-border bg-white/50 backdrop-blur-sm">
-          <div className="container mx-auto max-w-7xl px-4 md:px-8 py-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="flex flex-col">
-                <span className="text-3xl font-display font-bold text-navy">B.Com</span>
-                <span className="text-sm text-muted-foreground">6 Semesters</span>
+          <div className="container mx-auto max-w-7xl px-4 md:px-8 py-5">
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-navy">
+                <span className="font-extrabold text-navy">B.Com</span>
+                <span className="text-muted-foreground">—</span>
+                <span>Any Single Semester</span>
+                <span className="text-muted-foreground">—</span>
+                <span>All Subjects</span>
+                <span className="text-muted-foreground">—</span>
+                <span className="text-primary font-extrabold">₹125</span>
+                <span className="text-muted-foreground">—</span>
+                <span>6 Months Validity</span>
               </div>
-              <div className="flex flex-col">
-                <span className="text-3xl font-display font-bold text-navy">₹125</span>
-                <span className="text-sm text-muted-foreground">Per semester</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-3xl font-display font-bold text-navy">All</span>
-                <span className="text-sm text-muted-foreground">Subjects covered</span>
-              </div>
-              <div className="flex flex-col items-start gap-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-3xl font-display font-bold text-navy">100%</span>
-                  <CheckCircle2 className="h-5 w-5 text-primary" />
-                </div>
-                <span className="text-sm text-muted-foreground">Original content</span>
+              <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-navy">
+                <span className="font-extrabold text-navy">B.Com</span>
+                <span className="text-muted-foreground">—</span>
+                <span>All Semesters (1 to 6)</span>
+                <span className="text-muted-foreground">—</span>
+                <span>All Subjects</span>
+                <span className="text-muted-foreground">—</span>
+                <span className="text-primary font-extrabold">₹500</span>
+                <span className="text-muted-foreground">—</span>
+                <span>3 Years Validity</span>
               </div>
             </div>
           </div>
