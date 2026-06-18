@@ -37,7 +37,7 @@ export default function Testimonials() {
     <section className="py-12 container mx-auto max-w-7xl px-4 md:px-8">
       <div className="text-center mb-8">
         <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-3">What Students Say</h2>
-        <h3 className="text-4xl md:text-5xl font-display font-extrabold text-navy">Trusted by 900+ Students</h3>
+        <h3 className="text-4xl md:text-5xl font-display font-extrabold text-navy">Trusted by 600+ Students</h3>
       </div>
 
       <div className="relative max-w-2xl mx-auto">
