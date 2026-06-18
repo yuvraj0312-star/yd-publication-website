@@ -8,12 +8,12 @@ export default function Products({ products = [] }) {
 
   // Dummy fallback data mimicking HTML structure
   const fallbackProducts =[
-    { id: 1, sem: 'Sem 1', name: 'Sem 1 Complete Bundle', price: 125, active: true, subjects:['1.	Financial Accounting 1', '2.	Financial Accounting 2', '3.	Basic of Statistics', '4.	Ghandhian Economics & Rural Development', '5.	Vavharik Hindi', '6.	Writing & Presentation Skills', '7.	Indic Knowledge'] },
-    { id: 2, sem: 'Sem 2', name: 'Sem 2 Complete Bundle', price: 125, active: true, subjects:['1.	Cloud Accounting 1', '2.	Financial Accounting 3', '3.	Probability and discrete (statistics)', '4.	Economics (Rural Development: Policies and Programmes)', '5.	Practical English', '6.	Personality & Leadership Development', '7.	Indic Knowledge Tradition'] },
-    { id: 3, sem: 'Sem 3', name: 'Sem 3 Complete Bundle', price: 125, active: true, subjects:['1.	Cost Accounting 1', '2.	Corporate Accounting', '3.	Taxation 1', '4.	Basics of Statistics', '5.	Common Employability Skills', '6.	English & Communication', '7.	Indic Knowledge System'] },
-    { id: 4, sem: 'Sem 4', name: 'Sem 4 Complete Bundle', price: 125, active: true, subjects:['1.	Cost Accounting 2', '2.	Taxation 2', '3.	Cloud Accounting 2', '4.	Industrial Statistics', '5.	Fundamental of Communication in English 1', '6.	Essential Marketing Communication', '7.	IKS - Mahabharat & Ramayan'] },
-    { id: 5, sem: 'Sem 5', name: 'Sem 5 Complete Bundle', price: 125, active: true, subjects:['1.	Cost Accounting 3', '2.	Management Accounting 1', '3.	Auditing 1', '4.	Operation Research 1', '5.	Operation Research 2', '6.	English Language Comprehension'] },
-    { id: 6, sem: 'Sem 6', name: 'Sem 6 Complete Bundle', price: 125, active: true, subjects:['Auditing 2', 'Corporate Accounting 2', 'Sampling in research', 'Fundamental of Communication in English 2', 'And all other subjects'] }
+    { id: 1, sem: 'Sem 1', name: 'Sem 1 Complete Bundle', price: 125, active: true, subjects:['1.	Financial Accounting 1', '2.	Financial Accounting 2', '3.	Basic of Statistics', '4.	Ghandhian Economics & Rural Development', '5.	Vavharik Hindi', '6.	Writing & Presentation Skills', '7.	Indic Knowledge']},
+    { id: 2, sem: 'Sem 2', name: 'Sem 2 Complete Bundle', price: 125, active: true, subjects:['1.	Cloud Accounting 1', '2.	Financial Accounting 3', '3.	Probability and discrete (statistics)', '4.	Economics (Rural Development: Policies and Programmes)', '5.	Practical English', '6.	Personality & Leadership Development', '7.	Indic Knowledge Tradition']},
+    { id: 3, sem: 'Sem 3', name: 'Sem 3 Complete Bundle', price: 125, active: true, subjects:['1.	Cost Accounting 1', '2.	Corporate Accounting', '3.	Taxation 1', '4.	Basics of Statistics', '5.	Common Employability Skills', '6.	English & Communication', '7.	Indic Knowledge System']},
+    { id: 4, sem: 'Sem 4', name: 'Sem 4 Complete Bundle', price: 125, active: true, subjects:['1.	Cost Accounting 2', '2.	Taxation 2', '3.	Cloud Accounting 2', '4.	Industrial Statistics', '5.	Fundamental of Communication in English 1', '6.	Essential Marketing Communication', '7.	IKS - Mahabharat & Ramayan']},
+    { id: 5, sem: 'Sem 5', name: 'Sem 5 Complete Bundle', price: 125, active: true, subjects:['1.	Cost Accounting 3', '2.	Management Accounting 1', '3.	Auditing 1', '4.	Operation Research 1', '5.	Operation Research 2', '6.	English Language Comprehension']},
+    { id: 6, sem: 'Sem 6', name: 'Sem 6 Complete Bundle', price: 125, active: true, subjects:['Auditing 2', 'Corporate Accounting 2', 'Sampling in research', 'Fundamental of Communication in English 2', 'And all other subjects']}
   ];
 
   const data = products.length ? products : fallbackProducts;
