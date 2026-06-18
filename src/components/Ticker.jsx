@@ -4,6 +4,7 @@ export default function Ticker({ items =[] }) {
   const data = items.length ? items :[
     { text: '🛡️Per semester B.Com books & study material at just ₹125' },
     { text: '🛡️All 6 semester B.Com books & study material at just ₹500' },
+    { text: '🛡️Per semester B.Com books & study material at just ₹125' },
   ];
   
   return (
