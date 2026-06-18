@@ -1,4 +1,4 @@
-import { Smartphone, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Smartphone, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -29,8 +29,8 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-            
-            {/* YD App Early Access Form */}
+
+            {/* YD App Card */}
             <div className="lg:w-5/12 w-full max-w-md animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <div className="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-border shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-blue-400"></div>
@@ -38,27 +38,20 @@ export default function Hero() {
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                     <Smartphone className="h-6 w-6" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-navy">YD App — Coming Soon</h3>
-                    <p className="text-xs font-semibold text-primary uppercase tracking-wide">Get Early Access</p>
-                  </div>
+                  <h3 className="text-2xl font-extrabold text-navy">YD App</h3>
                 </div>
-                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                  Once the app is live, you will receive a direct download link. Enter your details below to get notified.
+                <p className="text-base font-medium text-navy mb-2">
+                  ✅ App is live on <span className="text-primary font-bold">Google Play Store</span>
                 </p>
-                <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert('Thanks! We will notify you when the app is live.'); }}>
-                  <input type="text" placeholder="Your Name" className="w-full h-12 rounded-xl bg-muted border border-border px-4 text-navy focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" required />
-                  <input type="text" placeholder="WhatsApp Number / Email" className="w-full h-12 rounded-xl bg-muted border border-border px-4 text-navy focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" required />
-                  <button type="submit" className="w-full h-12 bg-navy text-white hover:bg-navy-light rounded-xl font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
-                    Get Download Link
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
-                </form>
+                <p className="text-base font-medium text-muted-foreground">
+                  🍎 Coming soon on <span className="font-semibold text-navy">Apple App Store</span>
+                </p>
               </div>
             </div>
+
           </div>
         </div>
-        
+
         {/* Social Proof Strip */}
         <div className="absolute bottom-0 w-full border-t border-border bg-white/50 backdrop-blur-sm">
           <div className="container mx-auto max-w-7xl px-4 md:px-8 py-8">
@@ -68,7 +61,7 @@ export default function Hero() {
                 <span className="text-sm text-muted-foreground">6 Semesters</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl font-display font-bold text-navy">₹75</span>
+                <span className="text-3xl font-display font-bold text-navy">₹125</span>
                 <span className="text-sm text-muted-foreground">Per semester</span>
               </div>
               <div className="flex flex-col">
