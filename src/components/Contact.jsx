@@ -69,7 +69,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Follow us</p>
-                  <p className="font-bold text-navy text-lg">@ydpubilcation</p>
+                  <p className="font-bold text-navy text-lg">@ydappofficial</p>
                 </div>
               </div>
               <div className="flex items-center gap-5">
