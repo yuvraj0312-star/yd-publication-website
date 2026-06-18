@@ -8,12 +8,12 @@ export default function Products({ products = [] }) {
 
   // Dummy fallback data mimicking HTML structure
   const fallbackProducts =[
-    { id: 1, sem: 'Sem 1', name: 'Sem 1 Complete Study Pack', price: 75, active: true, subjects:['Descriptive Statistics', 'Gandhian Economics', 'Financial Accounting', 'Principles of Management', 'And all other subjects'] },
-    { id: 2, sem: 'Sem 2', name: 'Sem 2 Complete Study Pack', price: 75, active: true, subjects:['Cloud Accounting', 'Corporate Accounting', 'Macro Economics', 'Business Law', 'And all other subjects'] },
-    { id: 3, sem: 'Sem 3', name: 'Sem 3 Complete Study Pack', price: null, active: false, subjects:['Financial Accounting - 3', 'Cost Accounting - 2', 'Commercial Communication', 'Taxation', 'And all other subjects'] },
-    { id: 4, sem: 'Sem 4', name: 'Sem 4 Complete Study Pack', price: 75, active: true, subjects:['Cloud Accounting - 2', 'Cost Accounting', 'Auditing', 'Statistics', 'And all other subjects'] },
-    { id: 5, sem: 'Sem 5', name: 'Sem 5 Complete Study Pack', price: null, active: false, subjects:['Management Accounting', 'Economics', 'Auditing - 2', 'Business Statistics', 'And all other subjects'] },
-    { id: 6, sem: 'Sem 6', name: 'Sem 6 Complete Study Pack', price: null, active: false, subjects:['Advanced Accounting', 'Advanced Statistics', 'Auditing - 3', 'Fundamentals of Finance', 'And all other subjects'] }
+    { id: 1, sem: 'Sem 1', name: 'Sem 1 Complete Bundle', price: 125, active: true, subjects:['1.	Financial Accounting 1', '2.	Financial Accounting 2', '3.	Basic of Statistics', '4.	Ghandhian Economics & Rural Development', '5.	Vavharik Hindi', '6.	Writing & Presentation Skills', '7.	Indic Knowledge'] },
+    { id: 2, sem: 'Sem 2', name: 'Sem 2 Complete Bundle', price: 125, active: true, subjects:['1.	Cloud Accounting 1', '2.	Financial Accounting 3', '3.	Probability and discrete (statistics)', '4.	Economics (Rural Development: Policies and Programmes)', '5.	Practical English', '6.	Personality & Leadership Development', '7.	Indic Knowledge Tradition'] },
+    { id: 3, sem: 'Sem 3', name: 'Sem 3 Complete Bundle', price: 125, active: true, subjects:['1.	Cost Accounting 1', '2.	Corporate Accounting', '3.	Taxation 1', '4.	Basics of Statistics', '5.	Common Employability Skills', '6.	English & Communication', '7.	Indic Knowledge System'] },
+    { id: 4, sem: 'Sem 4', name: 'Sem 4 Complete Bundle', price: 125, active: true, subjects:['1.	Cost Accounting 2', '2.	Taxation 2', '3.	Cloud Accounting 2', '4.	Industrial Statistics', '5.	Fundamental of Communication in English 1', '6.	Essential Marketing Communication', '7.	IKS - Mahabharat & Ramayan'] },
+    { id: 5, sem: 'Sem 5', name: 'Sem 5 Complete Bundle', price: 125, active: true, subjects:['1.	Cost Accounting 3', '2.	Management Accounting 1', '3.	Auditing 1', '4.	Operation Research 1', '5.	Operation Research 2', '6.	English Language Comprehension'] },
+    { id: 6, sem: 'Sem 6', name: 'Sem 6 Complete Bundle', price: 125, active: true, subjects:['Auditing 2', 'Corporate Accounting 2', 'Sampling in research', 'Fundamental of Communication in English 2', 'And all other subjects'] }
   ];
 
   const data = products.length ? products : fallbackProducts;
@@ -23,11 +23,11 @@ export default function Products({ products = [] }) {
   },[data, filter, q]);
 
   return (
-    <section id="products" className="bg-muted py-24 border-y scroll-mt-10">
+    <section id="products" className="bg-muted py-12 border-y scroll-mt-10">
       <div className="container mx-auto max-w-7xl px-4 md:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-extrabold mb-4 text-navy">Our Study Material</h2>
-          <p className="text-muted-foreground">Books, Summary Books, & Papers</p>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-display font-extrabold mb-4 text-navy">Our Study Material (English & Gujarati)</h2>
+          <p className="text-muted-foreground">Full Books, Summary Books, Imp Books & Past Papers</p>
         </div>
         
         {/* Search & Filters */}
@@ -42,7 +42,7 @@ export default function Products({ products = [] }) {
           />
         </div>
 
-        <div className="flex justify-center gap-2 mb-12 flex-wrap">
+        <div className="flex justify-center gap-2 mb-8 flex-wrap">
           {sems.map(s => (
             <button 
               key={s} 
@@ -79,13 +79,11 @@ export default function Products({ products = [] }) {
                 <div className="flex flex-col gap-2">
                   {p.active ? (
                     <>
-                      <button className="w-full bg-navy text-white hover:bg-navy-light rounded-xl py-2.5 text-sm font-bold transition-colors">Buy Access</button>
+                      <button className="w-full bg-navy text-white hover:bg-navy-light rounded-xl py-2.5 text-sm font-bold transition-colors">Check on App</button>
                       <button className="w-full text-primary hover:bg-primary/5 rounded-xl py-2.5 text-xs font-bold transition-colors flex items-center justify-center gap-1">
-                        <Download className="h-3 w-3" /> Sample PDF
                       </button>
                     </>
                   ) : (
-                    <button className="w-full border-2 border-border text-navy hover:bg-muted rounded-xl py-2 text-sm font-bold transition-colors">Notify Me</button>
                   )}
                 </div>
               </div>
@@ -99,12 +97,12 @@ export default function Products({ products = [] }) {
           </div>
         )}
 
-        {/* Subject Access */}
+        {/* Subject Bundles */}
         <div className="mt-16 bg-navy text-white p-8 md:p-12 rounded-3xl relative overflow-hidden">
           <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
             <div>
               <span className="inline-flex items-center rounded-md bg-primary px-3 py-1 text-xs font-bold text-white mb-4 uppercase tracking-wider">Best Value</span>
-              <h3 className="text-3xl font-display font-bold mb-4">Full Semester Access</h3>
+              <h3 className="text-3xl font-display font-bold mb-4">Full Semester Bundle</h3>
               <p className="text-white/70 mb-8 leading-relaxed">Get all subjects for a semester at a discounted price. Complete exam preparation in one go.</p>
               <div className="flex items-center gap-4 mb-8">
                 <span className="text-4xl font-display font-bold text-primary">₹75</span>
@@ -112,7 +110,7 @@ export default function Products({ products = [] }) {
                 <span className="text-green-400 text-sm font-bold bg-green-400/10 px-2 py-1 rounded">Save 50%</span>
               </div>
               <button className="bg-white text-navy hover:bg-white/90 rounded-xl font-bold h-14 px-8 w-full sm:w-auto transition-colors">
-                Get Full Access
+                Get Full Bundle
               </button>
             </div>
             <div className="grid grid-cols-2 gap-y-4 gap-x-2">
