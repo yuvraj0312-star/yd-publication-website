@@ -5,7 +5,7 @@ export default function About() {
     <section id="about" className="container mx-auto max-w-7xl py-12 px-4 md:px-8 scroll-mt-20">
       <div className="grid gap-8 lg:grid-cols-2">
         <div>
-          <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-4">About YD Publication</h2>
+          <h2 className="text-primary font-bold uppercase tracking-wider text-3xl mb-4">About YD Publication</h2>
           <h3 className="text-4xl md:text-5xl font-display font-extrabold mb-4 text-navy leading-tight">Learn. Earn. Grow.</h3>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             YD Publication is an Ahmedabad-based edtech initiative designed specifically for Gujarat University Graduation students. We create concise, syllabus-aligned Books, Summary books and Exam papers at very affordable price so you can prepare confidently — even if you open the book a week before exams.
@@ -26,7 +26,7 @@ export default function About() {
               <CheckCircle2 className="h-6 w-6" />
             </div>
             <div>
-              <h4 className="text-xl font-bold mb-2 text-navy">100% Syllabus Covered</h4>
+              <h4 className="text-xl font-bold mb-2 text-navy">100% Syllabus Covered (As per NEP)</h4>
               <p className="text-muted-foreground text-normal leading-relaxed">Mapped strictly to the latest Gujarat University curriculum for Graduation students.</p>
             </div>
           </div>
