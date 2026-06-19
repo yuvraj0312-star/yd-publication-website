@@ -114,12 +114,12 @@ export default function Products({ products = [] }) {
               </button>
             </div>
             <div className="grid grid-cols-2 gap-y-4 gap-x-2">
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All Subjects</div>
+              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All Subjects Books</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Summary Books</div>
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Solved Papers</div>
+              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Past Papers</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> IMP Books</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All 6 Semesters</div>
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> English & Gujarati</div>
+              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> English or Gujarati</div>
             </div>
           </div>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/20 blur-[100px] -z-0 rounded-full"></div>
@@ -127,7 +127,7 @@ export default function Products({ products = [] }) {
 
         <div className="mt-8 text-center">
           <p className="text-muted-foreground">
-            Want the full list or a specific subject? <a href="#contact" className="text-primary font-bold hover:underline">Contact us →</a>
+            Do you have any query? <a href="#contact" className="text-primary font-bold hover:underline">Contact us →</a>
           </p>
         </div>
       </div>
