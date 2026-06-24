@@ -4,6 +4,7 @@ import Ticker from './components/Ticker';
 import Hero from './components/Hero';
 import About from './components/About';
 import Products from './components/Products';
+import Poll from './components/Poll';
 import Testimonials from './components/Testimonials';
 import AppSection from './components/AppSection';
 import FAQ from './components/FAQ';
@@ -35,6 +36,7 @@ export default function App() {
       <Hero />
       <About />
       <Products products={products} />
+      <Poll />
       <Testimonials />
       <AppSection />
       <FAQ faqs={faqs} />
