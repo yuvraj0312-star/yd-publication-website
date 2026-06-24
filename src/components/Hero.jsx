@@ -13,7 +13,7 @@ export default function Hero() {
                 <p className="text-primary font-bold mb-4 tracking-wide uppercase text-sm">
                   Gujarat University Graduation Students — Ahmedabad
                 </p>
-                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] font-display">
+                <h1 className="text-5xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] font-display">
                   Study Smart.<br />
                   <span className="text-primary">Score Better.</span>
                 </h1>
