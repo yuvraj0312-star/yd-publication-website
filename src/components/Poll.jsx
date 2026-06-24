@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { CheckCircle2, X, TrendingUp } from 'lucide-react';
+import { CheckCircle2, TrendingUp } from 'lucide-react';
 
 // ⚠️ REPLACE THESE with your JSONBin values to capture real votes privately
 const BIN_ID = 'YOUR_BIN_ID';
@@ -118,7 +118,7 @@ export default function Poll() {
 
       {open && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 yd-poll-overlay">
-          <div className="absolute inset-0 bg-navy/60 backdrop-blur-sm" onClick={close}></div>
+          <div className="absolute inset-0 bg-navy/60 backdrop-blur-sm"></div>
 
           <div className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden yd-poll-pop">
             {/* Confetti burst layer */}
@@ -146,10 +146,6 @@ export default function Poll() {
 
             {/* top gradient bar */}
             <div className="h-2 w-full bg-gradient-to-r from-primary via-blue-400 to-primary bg-[length:200%_100%] yd-poll-shimmer"></div>
-
-            <button onClick={close} className="absolute top-4 right-4 h-9 w-9 rounded-full bg-muted hover:bg-border flex items-center justify-center text-navy transition-colors z-10">
-              <X className="h-5 w-5" />
-            </button>
 
             <div className="p-7 pt-8">
               <div className="flex items-center gap-2 mb-2">
