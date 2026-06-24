@@ -2,32 +2,32 @@ import { BookOpen, CheckCircle2, Tag, Smartphone, GraduationCap, Users } from 'l
 
 const benefits = [
   {
-    icon: <Tag className="h-6 w-6" />,
-    color: 'bg-green-500/10 text-green-600',
-    title: '💸 Market mein ek semester ₹700+ ka — yahan 6 semester sirf ₹500 mein!',
-    highlight: 'Save ₹3,700+',
-    highlightColor: 'bg-green-500/10 text-green-600',
+    icon: <Tag className="h-5 w-5" />,
+    iconBg: 'bg-emerald-500 text-white',
+    cardBg: 'bg-emerald-50 border-emerald-100',
+    title: '6 sem sirf ₹500 mein',
+    sub: 'Market mein ek sem ₹700+ ka!',
   },
   {
-    icon: <Smartphone className="h-6 w-6" />,
-    color: 'bg-blue-500/10 text-blue-500',
-    title: '📱 Phone mein hai — kabhi bhi, kahin bhi padho. Books carry karne ki zarurat nahi!',
-    highlight: 'Mobile Access',
-    highlightColor: 'bg-blue-500/10 text-blue-600',
+    icon: <Smartphone className="h-5 w-5" />,
+    iconBg: 'bg-blue-500 text-white',
+    cardBg: 'bg-blue-50 border-blue-100',
+    title: 'Phone mein, kabhi bhi',
+    sub: 'Books carry karne ki zarurat nahi!',
   },
   {
-    icon: <GraduationCap className="h-6 w-6" />,
-    color: 'bg-purple-500/10 text-purple-500',
-    title: '📝 Assignment ho, Internal ho ya University Exam — ek hi jagah se poori preparation!',
-    highlight: 'All Round Use',
-    highlightColor: 'bg-purple-500/10 text-purple-600',
+    icon: <GraduationCap className="h-5 w-5" />,
+    iconBg: 'bg-purple-500 text-white',
+    cardBg: 'bg-purple-50 border-purple-100',
+    title: 'Har exam ke liye ready',
+    sub: 'Assignment, Internal & University!',
   },
   {
-    icon: <Users className="h-6 w-6" />,
-    color: 'bg-amber-500/10 text-amber-500',
-    title: '🏠 External students ke liye best — exam se pehle bhi shuru karo, pass zaroor hoge!',
-    highlight: 'External Friendly',
-    highlightColor: 'bg-amber-500/10 text-amber-600',
+    icon: <Users className="h-5 w-5" />,
+    iconBg: 'bg-amber-500 text-white',
+    cardBg: 'bg-amber-50 border-amber-100',
+    title: 'External students ke liye best',
+    sub: 'Exam se pehle bhi shuru karo!',
   },
 ];
 
@@ -76,18 +76,18 @@ export default function About() {
 
       {/* Benefits Section */}
       <div className="mb-4">
-        <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-3">Why Choose YD Publication</h2>
-        <h3 className="text-3xl md:text-4xl font-display font-extrabold text-navy mb-10">Benefits at a Glance</h3>
-        <div className="grid gap-6 sm:grid-cols-2">
+        <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">Why Choose YD Publication</h2>
+        <h3 className="text-3xl md:text-4xl font-display font-extrabold text-navy mb-6">Benefits at a Glance</h3>
+        <div className="grid gap-3 sm:grid-cols-2">
           {benefits.map((b, i) => (
-            <div key={i} className="flex flex-col gap-4 p-6 rounded-2xl border bg-white hover:shadow-lg transition-all hover:-translate-y-1">
-              <div className="flex items-center justify-between">
-                <div className={`h-12 w-12 rounded-xl flex items-center justify-center ${b.color}`}>
-                  {b.icon}
-                </div>
-                <span className={`text-xs font-bold px-3 py-1 rounded-full ${b.highlightColor}`}>{b.highlight}</span>
+            <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl border ${b.cardBg} hover:shadow-md transition-all`}>
+              <div className={`h-11 w-11 rounded-xl flex items-center justify-center shrink-0 shadow-sm ${b.iconBg}`}>
+                {b.icon}
               </div>
-              <h4 className="text-base font-semibold text-navy leading-snug">{b.title}</h4>
+              <div className="min-w-0">
+                <h4 className="text-base font-bold text-navy leading-tight">{b.title}</h4>
+                <p className="text-sm text-navy/60 leading-snug">{b.sub}</p>
+              </div>
             </div>
           ))}
         </div>
