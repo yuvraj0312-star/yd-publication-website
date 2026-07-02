@@ -44,7 +44,8 @@ export default function Poll() {
             if (prevVote) {
               setVoted(true);
               setChoice(prevVote);
-              setDisplay(computeFakeCounts(prevVote));
+              const saved = localStorage.getItem('yd_poll_display');
+              if (saved) setDisplay(JSON.parse(saved));
             }
             setTimeout(() => setOpen(true), 400);
           }
@@ -60,16 +61,28 @@ export default function Poll() {
     if (open && voted) setTimeout(() => setAnimateBars(true), 200);
   }, [open, voted]);
 
-  function computeFakeCounts(picked) {
-    // Count grows continuously over time so it always looks alive and rising.
-    // Anchored to a fixed launch date, increasing ~every few minutes.
-    const launch = new Date('2026-06-24T00:00:00Z').getTime();
-    const minsSince = Math.max(0, Math.floor((Date.now() - launch) / (1000 * 60)));
-    const base = 1314 + Math.floor(minsSince / 7); // +1 vote roughly every 7 minutes
-    const bPct = 0.72 + ((Math.floor(minsSince / 360)) % 5) * 0.01; // 72-76%, drifts slowly
-    let b = Math.round(base * bPct);
-    let a = base - b;
-    if (picked === 'a') a += 1; else b += 1;
+  // Public total starts at 1589 and increases by exactly 1 per real vote (shared via JSONBin).
+  // Split always shown ~72% for ₹500 (b) and ~28% for ₹125 (a), regardless of actual choice.
+  async function getPublicCounts(picked) {
+    let total = 1589;
+    if (BIN_ID !== 'YOUR_BIN_ID') {
+      try {
+        const r = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, { headers: { 'X-Master-Key': MASTER_KEY } });
+        const j = await r.json();
+        const cur = j.record || { a: 0, b: 0 };
+        total = 1589 + (cur.a || 0) + (cur.b || 0);
+      } catch {}
+    } else {
+      // no backend configured yet — fallback so at least this device sees it grow
+      const local = parseInt(localStorage.getItem('yd_poll_local_total') || '0', 10);
+      total = 1589 + local;
+    }
+    total += 1; // this vote
+    if (BIN_ID === 'YOUR_BIN_ID') {
+      localStorage.setItem('yd_poll_local_total', String(total - 1589));
+    }
+    const b = Math.round(total * 0.72);
+    const a = total - b;
     return { a, b };
   }
 
@@ -91,14 +104,18 @@ export default function Poll() {
     } catch {}
   }
 
-  const vote = (picked) => {
+  const vote = async (picked) => {
     if (voted) return;
     setChoice(picked);
     setVoted(true);
-    setDisplay(computeFakeCounts(picked));
     burstConfetti();
+    const counts = await getPublicCounts(picked);
+    setDisplay(counts);
+    if (window.localStorage) {
+      localStorage.setItem('yd_poll_choice', picked);
+      localStorage.setItem('yd_poll_display', JSON.stringify(counts));
+    }
     setTimeout(() => setAnimateBars(true), 250);
-    if (window.localStorage) localStorage.setItem('yd_poll_choice', picked);
     recordRealVote(picked);
   };
 
