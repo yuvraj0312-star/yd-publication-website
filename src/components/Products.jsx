@@ -103,17 +103,21 @@ export default function Products({ products = [] }) {
           <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
             <div>
               <span className="inline-flex items-center rounded-md bg-primary px-3 py-1 text-xs font-bold text-white mb-4 uppercase tracking-wider">Best Value</span>
-              <h3 className="text-3xl font-display font-bold mb-4">All 6 Semester Bundle <span className="text-amber-300 text-base align-middle">Best Deal</span></h3>
-              <p className="text-white/70 mb-8 leading-relaxed">Get all subjects for all 6 semesters at the best price. Complete exam preparation in one go.</p>
-              <div className="flex items-center gap-4 mb-8">
+              <h3 className="text-3xl font-display font-bold mb-4">All 6 Semester Bundle</h3>
+              <p className="text-white/70 mb-6 leading-relaxed">Get all subjects for all 6 semesters at the best price. Complete exam preparation in one go.</p>
+              <div className="flex items-center gap-4 mb-6">
                 <span className="text-4xl font-display font-bold text-primary">₹500</span>
                 <span className="text-amber-300 text-sm font-bold bg-amber-400/10 px-2 py-1 rounded">3 Years Validity</span>
               </div>
-              <button disabled className="bg-white/20 text-white/70 rounded-xl font-bold h-14 px-8 w-full sm:w-auto cursor-not-allowed border border-white/20">
-              Now, both plans are live on the App, ₹125 for any single-semester- Validity till end of University exams & ₹500 for all-semester- Validity for 3 years from purchase
+              <button className="bg-white text-navy hover:bg-white/90 rounded-xl font-bold h-14 px-8 w-full sm:w-auto transition-colors">
+                Check on App
               </button>
+              <p className="text-white/50 text-xs mt-4 leading-relaxed">
+                Both plans are live on the app — ₹125 for any single semester (validity till end of university exams) & ₹500 for all semesters (validity 3 years from purchase).
+              </p>
+            </div>
             <div className="grid grid-cols-2 gap-y-4 gap-x-2">
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All Subjects Books</div>
+              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All Subject Books</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Summary Books</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Past Papers</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> IMP Books</div>
