@@ -26,8 +26,8 @@ const benefits = [
     icon: <Users className="h-5 w-5" />,
     iconBg: 'bg-amber-500 text-white',
     cardBg: 'bg-amber-50 border-amber-100',
-    title: 'Ek ek book k liye aur wait krna aur sbse mangne ki zarurt khtm',
-    sub: 'Ek bar 500 pay kro aur 3 sal ka tension khtm',
+    title: 'Ek ek book k liye groups me wait krna aur fir sbse mangne ki zarurt khtm - Aura 100%',
+    sub: 'Ek bar 500 pay kro aur 3 sal ka tension khtm - Get Updated books and papers and other benefits in future',
   },
 ];
 
