@@ -61,7 +61,7 @@ export default function Products({ products = [] }) {
               <div className="p-6 border-b border-muted">
                 <div className="flex justify-between items-start mb-3">
                   <span className="inline-flex items-center rounded-md bg-muted px-2.5 py-0.5 text-xs font-semibold text-navy">{p.sem}</span>
-                  {!p.active && <span className="inline-flex items-center rounded-md bg-amber-500 px-2.5 py-0.5 text-xs font-bold text-white">Coming Soon</span>}
+                  {!p.active && <span className="inline-flex items-center rounded-md bg-amber-500 px-2.5 py-0.5 text-xs font-bold text-white">Added Soon</span>}
                 </div>
                 <h3 className="text-xl font-bold text-navy mb-2">{p.name}</h3>
                 <div className="text-sm text-muted-foreground mt-2 space-y-1">
@@ -83,7 +83,7 @@ export default function Products({ products = [] }) {
                     </button>
                   ) : (
                     <button disabled className="w-full bg-muted text-muted-foreground rounded-xl py-2.5 text-sm font-bold cursor-not-allowed">
-                      Coming Soon
+                      All subjects added soon
                     </button>
                   )}
                 </div>
@@ -103,17 +103,15 @@ export default function Products({ products = [] }) {
           <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
             <div>
               <span className="inline-flex items-center rounded-md bg-primary px-3 py-1 text-xs font-bold text-white mb-4 uppercase tracking-wider">Best Value</span>
-              <h3 className="text-3xl font-display font-bold mb-4">All 6 Semester Bundle <span className="text-amber-300 text-base align-middle">(Soon)</span></h3>
+              <h3 className="text-3xl font-display font-bold mb-4">All 6 Semester Bundle <span className="text-amber-300 text-base align-middle">Best Deal</span></h3>
               <p className="text-white/70 mb-8 leading-relaxed">Get all subjects for all 6 semesters at the best price. Complete exam preparation in one go.</p>
               <div className="flex items-center gap-4 mb-8">
                 <span className="text-4xl font-display font-bold text-primary">₹500</span>
                 <span className="text-amber-300 text-sm font-bold bg-amber-400/10 px-2 py-1 rounded">3 Years Validity</span>
               </div>
               <button disabled className="bg-white/20 text-white/70 rounded-xl font-bold h-14 px-8 w-full sm:w-auto cursor-not-allowed border border-white/20">
-                🚀 Launching Soon
+              Now, both plans are live on the App, ₹125 for any single-semester- Validity till end of University exams & ₹500 for all-semester- Validity for 3 years from purchase
               </button>
-              <p className="text-white/50 text-xs mt-3">₹125 single-semester plan is live now on the app. The all-semester ₹500 plan launches in the coming days.</p>
-            </div>
             <div className="grid grid-cols-2 gap-y-4 gap-x-2">
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All Subjects Books</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Summary Books</div>
