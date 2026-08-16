@@ -5,8 +5,8 @@ const benefits = [
     icon: <Tag className="h-5 w-5" />,
     iconBg: 'bg-emerald-500 text-white',
     cardBg: 'bg-emerald-50 border-emerald-100',
-    title: '6 sem sirf ₹499 mein',
-    sub: 'Market mein ek sem ₹700+ ka!',
+    title: 'Sare 6 sem sirf ₹499 mein',
+    sub: 'Market mein uski price ₹5200 hai',
   },
   {
     icon: <Smartphone className="h-5 w-5" />,
@@ -20,14 +20,14 @@ const benefits = [
     iconBg: 'bg-purple-500 text-white',
     cardBg: 'bg-purple-50 border-purple-100',
     title: 'Har exam ke liye ready',
-    sub: 'Assignment, Internal & University!',
+    sub: 'Assignment ho, ya Internal exams, ya fir University exams!',
   },
   {
     icon: <Users className="h-5 w-5" />,
     iconBg: 'bg-amber-500 text-white',
     cardBg: 'bg-amber-50 border-amber-100',
     title: 'External students ke liye best',
-    sub: 'Exam se pehle bhi shuru karo!',
+    sub: 'Ek bar purchase kro aur 3 sal k liye books ki tension nhi',
   },
 ];
 
