@@ -14,7 +14,7 @@ export default function Hero() {
                   Gujarat University Graduation Students — Ahmedabad
                 </p>
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] font-display">
-                  Ek bar purchase kro aur 3 sal k liye books ki tension nhi.<br />
+                  Ek bar purchase kro aur 3 sal k liye books ki tension khatam..<br />
                   <span className="text-primary">AURA bna rhe...sbse mangte firne ki zarurt nhi hai ab</span>
                 </h1>
                 <p className="text-xl text-foreground mb-10 max-w-2xl leading-relaxed">
