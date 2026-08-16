@@ -13,12 +13,12 @@ export default function Hero() {
                 <p className="text-primary font-bold mb-4 tracking-wide uppercase text-sm">
                   Gujarat University Graduation Students — Ahmedabad
                 </p>
-                <h1 className="text-5xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] font-display">
-                  For Students.<br />
-                  <span className="text-primary">By Educational Experts.</span>
+                <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] font-display">
+                  Study Smart.<br />
+                  <span className="text-primary">Score Better.</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-                  Its an affordable, exam-ready study material for Graduation students — crafted as per Gujarat University syllabus.
+                  Affordable, exam-ready study material for Graduation students — crafted for Gujarat University syllabus.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a href="#products" className="inline-flex items-center justify-center bg-navy text-white hover:bg-navy-light h-14 px-8 text-lg font-bold rounded-xl transition-all shadow-lg hover:shadow-xl">
@@ -72,7 +72,7 @@ export default function Hero() {
                 <span className="text-sm md:text-base text-muted-foreground">Any Single Semester · All Subjects · 6 Months Validity</span>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="text-3xl font-display font-extrabold text-navy flex items-center gap-2">₹500 <span className="text-amber-600 text-xs font-bold bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wide">Best Deal- offer till 30th Nov.</span></span>
+                <span className="text-3xl font-display font-extrabold text-navy flex items-center gap-2">₹499 <span className="text-amber-600 text-xs font-bold bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wide">Launching Soon</span></span>
                 <span className="text-sm md:text-base text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity</span>
               </div>
             </div>
