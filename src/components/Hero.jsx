@@ -18,7 +18,7 @@ export default function Hero() {
                   <span className="text-primary">AURA bna rhe...sbse mangte firne ki zarurt nhi hai ab</span>
                 </h1>
                 <p className="text-xl text-foreground mb-2 max-w-2xl leading-relaxed">
-                  Assignment likhna ho ya fir exam aane vali ho, Bohot se mere bhai-behen, apne friends ko call krenge aur request krna chalu krenge "Photo bhej de yarr🙏" (Samne vala dega nhi ya fir bohot WAIT krvata hai...AURA Negative🔻), ya fir groups me dhundega ki koi ek-do subject ki free ki pdf upload krde, past papers mil jaye...ab vo sare problems ko khatam krne k liye hmne YD App bnai hai..jo aapko ek coffee ki price me sari books provide krta hai
+                  Assignment likhna ho ya fir exam aane vali ho, Bohot se mere bhai-behen, apne friends ko call krenge aur request krna start krenge "Books ki Photo bhej de yarr🙏" (Samne vala bhejega nhi ya fir bohot WAIT krvata hai...AURA Negative🔻), ya fir groups me dhundega ki koi ek-do subject ki free ki pdf upload krde, past papers mil jaye...ab vo sare problems ko khatam krne k liye hmne YD App bnai hai..jo aapko ek coffee ki price me sari books provide krta hai
                 </p>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function Hero() {
               </div>
               <div className="flex flex-col gap-2">
                 <span className="text-3xl font-display font-extrabold text-navy flex items-center gap-2">₹499 <span className="text-amber-600 text-xs font-bold bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wide">Best Plan</span></span>
-                <span className="text-sm md:text-base text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity - Buy once & Books & Papers ki sari problems khatam</span>
+                <span className="text-sm md:text-base text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity - Buy once & No tension for 3 years khatam</span>
               </div>
             </div>
           </div>
