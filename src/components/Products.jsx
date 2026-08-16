@@ -106,14 +106,14 @@ export default function Products({ products = [] }) {
               <h3 className="text-3xl font-display font-bold mb-4">All 6 Semester Bundle</h3>
               <p className="text-white/70 mb-6 leading-relaxed">Get all subjects for all 6 semesters at the best price. Complete exam preparation in one go.</p>
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-display font-bold text-primary">₹500</span>
+                <span className="text-4xl font-display font-bold text-primary">₹499</span>
                 <span className="text-amber-300 text-sm font-bold bg-amber-400/10 px-2 py-1 rounded">3 Years Validity</span>
               </div>
               <button className="bg-white text-navy hover:bg-white/90 rounded-xl font-bold h-14 px-8 w-full sm:w-auto transition-colors">
                 Check on App
               </button>
               <p className="text-white/50 text-xs mt-4 leading-relaxed">
-                Both plans are live on the app — ₹125 for any single semester (validity till end of university exams) & ₹500 for all semesters (validity 3 years from purchase).
+                Both plans are live on the app — ₹125 for any single semester (validity till end of university exams) & ₹499 for all semesters (validity 3 years from purchase).
               </p>
             </div>
             <div className="grid grid-cols-2 gap-y-4 gap-x-2">
