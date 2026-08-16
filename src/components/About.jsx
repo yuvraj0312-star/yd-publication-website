@@ -5,29 +5,29 @@ const benefits = [
     icon: <Tag className="h-5 w-5" />,
     iconBg: 'bg-emerald-500 text-white',
     cardBg: 'bg-emerald-50 border-emerald-100',
-    title: '6 sem sirf ₹500 mein',
-    sub: 'Market mein ek semester ki books ₹800+ ki milti hai!',
+    title: '6 sem sirf ₹499 mein',
+    sub: 'Market mein ek sem ₹700+ ka!',
   },
   {
     icon: <Smartphone className="h-5 w-5" />,
     iconBg: 'bg-blue-500 text-white',
     cardBg: 'bg-blue-50 border-blue-100',
-    title: 'Sari books Phone mein hai, use kr skte ho kabhi bhi',
-    sub: 'Books sambhalna, Book store jana chnage krvane esi sari zanzat khatam',
+    title: 'Phone mein, kabhi bhi',
+    sub: 'Books carry karne ki zarurat nahi!',
   },
   {
     icon: <GraduationCap className="h-5 w-5" />,
     iconBg: 'bg-purple-500 text-white',
     cardBg: 'bg-purple-50 border-purple-100',
     title: 'Har exam ke liye ready',
-    sub: 'Assignment bnana ho, ya Internal exams, ya fir University exams!',
+    sub: 'Assignment, Internal & University!',
   },
   {
     icon: <Users className="h-5 w-5" />,
     iconBg: 'bg-amber-500 text-white',
     cardBg: 'bg-amber-50 border-amber-100',
-    title: 'Ek ek book k liye groups me wait krna aur fir sbse mangne ki zarurt khtm - Aura 100%',
-    sub: 'Ek bar 500 pay kro aur 3 sal ka tension khtm - Get Updated books and papers and other benefits in future',
+    title: 'External students ke liye best',
+    sub: 'Exam se pehle bhi shuru karo!',
   },
 ];
 
@@ -67,8 +67,8 @@ export default function About() {
               <Tag className="h-6 w-6" />
             </div>
             <div>
-              <h4 className="text-xl font-bold mb-2 text-navy">Very Affordable</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">Any single semester for ₹125. All 6 semesters for just ₹500 with 3 years validity.</p>
+              <h4 className="text-xl font-bold mb-2 text-navy">Highly Affordable</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">Any single semester for ₹125. All 6 semesters for just ₹499 with 3 years validity.</p>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function About() {
       {/* Benefits Section */}
       <div className="mb-4">
         <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">Why Choose YD Publication</h2>
-        <h3 className="text-3xl md:text-4xl font-display font-extrabold text-navy mb-6">Benefits</h3>
+        <h3 className="text-3xl md:text-4xl font-display font-extrabold text-navy mb-6">Benefits at a Glance</h3>
         <div className="grid gap-3 sm:grid-cols-2">
           {benefits.map((b, i) => (
             <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl border ${b.cardBg} hover:shadow-md transition-all`}>
