@@ -15,7 +15,7 @@ export default function Footer() {
               Empowering Gujarat University students with high-quality, affordable study materials. Learn. Grow.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.instagram.com/ydappofficial" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
@@ -30,20 +30,17 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-navy mb-6 font-display text-lg">Quick Links</h4>
             <ul className="space-y-4 text-sm text-muted-foreground font-medium">
-              <li><a href="#" className="hover:text-primary transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Blog & Exam Tips</a></li>
+              <li><a href="/" className="hover:text-primary transition-colors">Home</a></li>
               <li><a href="#faq" className="hover:text-primary transition-colors">FAQs</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Campus Ambassador</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Student Lounge</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-navy mb-6 font-display text-lg">Legal</h4>
             <ul className="space-y-4 text-sm text-muted-foreground font-medium">
-              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Refund Policy</a></li>
+              <li><a href="/privacy-policy.html" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms.html" className="hover:text-primary transition-colors">Terms of Service</a></li>
+              <li><a href="/refund-policy.html" className="hover:text-primary transition-colors">Refund Policy</a></li>
             </ul>
           </div>
 
