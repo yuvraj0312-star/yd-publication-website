@@ -17,7 +17,7 @@ export default function Hero() {
                   Ek bar purchase kro aur 3 sal k liye books ki tension nhi.<br />
                   <span className="text-primary">AURA bna rhe...sbse mangte firne ki zarurt nhi hai ab</span>
                 </h1>
-                <p className="text-xl text-foreground mb-10 max-w-2xl leading-relaxed"
+                <p className="text-xl text-foreground mb-10 max-w-2xl leading-relaxed">
                   Assignment likhna ho ya fir exam aane vali ho, Bohot se mere bhai-behen, apne friends ko call krenge aur request krna chalu krenge "Photo bhej de yarr🙏" (Samne vala dega nhi ya fir usko WAIT krvata hai...AURA Negetive🔻), ya fir groups me dhundega ki koi free ki pdf upload krde, past papers mil jaye...Vo sare problems ko khatam k liye hmne YD App bnai hai..jo aapko ek coffee ki price me sari books provide krta hai
                 </p>
                 <div className="flex flex-wrap gap-4">
