@@ -15,7 +15,7 @@ export default function Hero() {
                 </p>
                 <h1 className="text-5xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] font-display">
                   Ek bar purchase kro aur 3 sal k liye books ki tension nhi.<br />
-                  <span className="text-primary">Score Better.</span>
+                  <span className="text-primary">Aura bna rhe...</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
                   Affordable, exam-ready study material for Graduation students — crafted for Gujarat University syllabus.
