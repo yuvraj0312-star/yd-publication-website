@@ -18,7 +18,7 @@ export default function Hero() {
                   <span className="text-primary">AURA bna rhe...sbse mangte firne ki zarurt nhi hai ab</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-                  Assignment likhna ho ya fir exam aane vali ho, Bohot se mere bhai aur behen, apne friends ko call krenge aur yha vha se thode bohot photos mangenge(Samne vala fir usko WAIT krvata hai...Aura negetive), ya fir groups me dhundega ki khi se free ki pdf mil jaye, past papers mil jaye...Vo sare problems ko mitane k liye hmne YD App bnai hai..jo aapko ek coffee ki price me books provide krti hai
+                  Assignment likhna ho ya fir exam aane vali ho, Bohot se mere bhai aur behen, apne friends ko call krenge aur yha vha se thode bohot photos mangenge(Samne vala ya to dega nhi ya fir usko WAIT krvata hai...Aura Negetive), ya fir groups me dhundega ki khi se free ki pdf mil jaye, past papers mil jaye...Vo sare problems ko mitane k liye hmne YD App bnai hai..jo aapko ek coffee ki price me books provide krti hai
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a href="#products" className="inline-flex items-center justify-center bg-navy text-white hover:bg-navy-light h-14 px-8 text-lg font-bold rounded-xl transition-all shadow-lg hover:shadow-xl">
