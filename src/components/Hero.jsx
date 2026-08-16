@@ -61,11 +61,11 @@ export default function Hero() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="flex flex-col gap-2">
                 <span className="text-3xl font-display font-extrabold text-navy">₹125 <span className="text-primary text-base font-semibold">/ semester</span></span>
-                <span className="text-sm md:text-base text-muted-foreground">Any Single Semester · All Subjects · 6 Months Validity</span>
+                <span className="text-sm md:text-base text-muted-foreground">Any Single Semester · All Subjects · Validity till Exams End of that particular semester</span>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="text-3xl font-display font-extrabold text-navy flex items-center gap-2">₹499 <span className="text-amber-600 text-xs font-bold bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wide">Launching Soon</span></span>
-                <span className="text-sm md:text-base text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity</span>
+                <span className="text-3xl font-display font-extrabold text-navy flex items-center gap-2">₹499 <span className="text-amber-600 text-xs font-bold bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wide">Best Plan</span></span>
+                <span className="text-sm md:text-base text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity - Buy once & Books & Papers ki sari problems khatam</span>
               </div>
             </div>
           </div>
