@@ -17,17 +17,9 @@ export default function Hero() {
                   Ek bar purchase kro aur 3 sal k liye books ki tension khatam..<br />
                   <span className="text-primary">AURA bna rhe...sbse mangte firne ki zarurt nhi hai ab</span>
                 </h1>
-                <p className="text-xl text-foreground mb-10 max-w-2xl leading-relaxed">
+                <p className="text-xl text-foreground mb-2 max-w-2xl leading-relaxed">
                   Assignment likhna ho ya fir exam aane vali ho, Bohot se mere bhai-behen, apne friends ko call krenge aur request krna chalu krenge "Photo bhej de yarr🙏" (Samne vala dega nhi ya fir bohot WAIT krvata hai...AURA Negative🔻), ya fir groups me dhundega ki koi ek-do subject ki free ki pdf upload krde, past papers mil jaye...ab vo sare problems ko khatam krne k liye hmne YD App bnai hai..jo aapko ek coffee ki price me sari books provide krta hai
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  <a href="#products" className="inline-flex items-center justify-center bg-navy text-white hover:bg-navy-light h-14 px-8 text-lg font-bold rounded-xl transition-all shadow-lg hover:shadow-xl">
-                    Explore Study Material
-                  </a>
-                  <a href="#contact" className="inline-flex items-center justify-center border-2 border-border hover:bg-muted h-14 px-8 text-lg font-medium rounded-xl transition-all">
-                    Contact Us
-                  </a>
-                </div>
               </div>
             </div>
 
@@ -97,6 +89,20 @@ export default function Hero() {
           </div>
         </div>
       </section>
+
+      {/* CTA Buttons — moved here, after the highlights banner */}
+      <div className="bg-white py-10 border-b">
+        <div className="container mx-auto max-w-7xl px-4 md:px-8 flex justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a href="#products" className="inline-flex items-center justify-center bg-navy text-white hover:bg-navy-light h-14 px-8 text-lg font-bold rounded-xl transition-all shadow-lg hover:shadow-xl">
+              Explore Study Material
+            </a>
+            <a href="#contact" className="inline-flex items-center justify-center border-2 border-border hover:bg-muted h-14 px-8 text-lg font-medium rounded-xl transition-all">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
