@@ -15,7 +15,7 @@ export default function Hero() {
                 </p>
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] font-display">
                   Ek bar purchase kro aur 3 sal k liye books ki tension nhi.<br />
-                  <span className="text-primary">Aura bna rhe...sbse mangte firne ki zarurt nhi hai ab</span>
+                  <span className="text-primary">AURA bna rhe...sbse mangte firne ki zarurt nhi hai ab</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
                   Assignment likhna ho ya fir exam aane vali ho, Bohot se mere bhai aur behen kya krenge ki, sare friends ko call krenge aur yha vha se thode bohot photos mangvayega, groups me dhundega ki free ki pdf mil jaye, past papers mil jaye...Vo sare problems ko mitane k liye hmne YD App bnai hai..jha ek coffee ki price me books available hai
