@@ -1,10 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Check, CheckCheck, RotateCcw, Download } from 'lucide-react';
 
-// The full story, told as a chat feed that plays out on its own once scrolled into view.
-// Screen A: 1-on-1 friend — long wait, seen, no reply (Aura hit #1)
-// Screen B: class group — everyone dodges sharing (Aura hit #2)
-// Screen C: YD Publication — the fix (Aura restored)
 const STEPS = [
   { screen: 'A', type: 'header', name: 'Aryan', sub: 'online' },
   { screen: 'A', type: 'sent', text: 'Bhai Stats ki notes ki photo bhej dena thoda 🙏', tick: 'sent', wait: 700 },
@@ -39,12 +35,12 @@ function TypingDots() {
 
 export default function ChatStory() {
   const [visible, setVisible] = useState(0);
-  const [started, setStarted] = useState(false);
   const [done, setDone] = useState(false);
   const [ticks, setTicks] = useState({});
   const [showTyping, setShowTyping] = useState(false);
   const wrapRef = useRef(null);
   const timers = useRef([]);
+  const hasStarted = useRef(false);
 
   const clearTimers = () => { timers.current.forEach(clearTimeout); timers.current = []; };
 
@@ -59,8 +55,6 @@ export default function ChatStory() {
     if (reduceMotion) {
       setVisible(STEPS.length);
       setDone(true);
-      const t = {};
-      STEPS.forEach((s, i) => { if (s.type === 'sent' || s.type === 'tick-update') t.a = s.tick || t.a; });
       setTicks({ a: 'seen' });
       return;
     }
@@ -79,22 +73,26 @@ export default function ChatStory() {
     });
   }, []);
 
+  // Start playback once, the first time the card scrolls into view.
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !started) {
-            setStarted(true);
+          if (entry.isIntersecting && !hasStarted.current) {
+            hasStarted.current = true;
             play();
           }
         });
       },
-      { threshold: 0.35 }
+      { threshold: 0.3 }
     );
     if (wrapRef.current) observer.observe(wrapRef.current);
-    return () => { observer.disconnect(); clearTimers(); };
+    return () => observer.disconnect();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [started, play]);
+  }, [play]);
+
+  // Only clear pending timers when the component truly unmounts.
+  useEffect(() => () => clearTimers(), []);
 
   const shown = STEPS.slice(0, visible);
   const currentHeader = [...shown].reverse().find((s) => s.type === 'header');
@@ -124,18 +122,16 @@ export default function ChatStory() {
         </div>
 
         <div className="max-w-md mx-auto bg-white rounded-3xl border border-border shadow-xl overflow-hidden">
-          {/* header */}
           <div className="flex items-center gap-3 px-5 py-4 border-b border-border bg-white sticky top-0 z-10">
             <div className={`h-10 w-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${currentHeader?.brand ? 'bg-navy text-white' : 'bg-primary/10 text-primary'}`}>
-              {currentHeader?.brand ? 'YD' : (currentHeader?.name?.[0] || '?')}
+              {currentHeader?.brand ? 'YD' : (currentHeader?.name?.[0] || '💬')}
             </div>
             <div className="min-w-0">
-              <p className="font-bold text-navy text-sm truncate">{currentHeader?.name || '...'}</p>
+              <p className="font-bold text-navy text-sm truncate">{currentHeader?.name || 'Kahani shuru ho rahi hai...'}</p>
               <p className="text-xs text-muted-foreground truncate">{currentHeader?.sub || ''}</p>
             </div>
           </div>
 
-          {/* messages */}
           <div className="px-5 py-6 space-y-3 min-h-[380px] bg-gradient-to-b from-muted/40 to-white">
             {shown.map((step, i) => {
               if (step.type === 'header') return null;
@@ -203,6 +199,10 @@ export default function ChatStory() {
               <div className="flex justify-start">
                 <TypingDots />
               </div>
+            )}
+
+            {visible === 0 && (
+              <p className="text-center text-xs text-muted-foreground pt-24">Neeche scroll karo, kahani yahin shuru hogi 👇</p>
             )}
           </div>
 
