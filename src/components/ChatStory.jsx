@@ -28,7 +28,7 @@ const SCENES = [
     header: { name: 'YD Publication', sub: 'Official', brand: true },
     beats: [
       { type: 'received', text: 'Ruk ja, tension mat le 😌...AURA khrab nai hona chahiye dusro k samne', hold: 1500 },
-      { type: 'received', text: 'Sem ki saari Books + Summary + Past Papers + Past Papers — bas ek coffee ki price mein ☕📚', hold: 1900 },
+      { type: 'received', text: 'Sem ki saari Books + Summary + IMP Book + Past Papers — bas ek coffee ki price mein ☕📚', hold: 1900 },
       { type: 'card', hold: 1400 },
       { type: 'badge', text: 'AURA fully recharged 💯🔥', tone: 'good', confetti: true, hold: 600 },
     ],
