@@ -1,4 +1,5 @@
 import { Smartphone } from 'lucide-react';
+import ChatStory from './ChatStory';
 
 export default function Hero() {
   return (
@@ -54,8 +55,13 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Pricing Strip — now below everything, not overlapping */}
+      {/* Story — immediately after the "neeche dekho" cue, nothing in between */}
+      <ChatStory />
+
+      <div className="bg-white text-navy border-b">
+        {/* Pricing Strip */}
         <div className="w-full border-t border-border bg-white/50">
           <div className="container mx-auto max-w-7xl px-4 md:px-8 py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -70,7 +76,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
       </div>
 
       {/* Highlights Banner */}
@@ -90,7 +95,7 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* CTA Buttons — after the highlights banner */}
+      {/* CTA Buttons */}
       <div className="bg-white py-10 border-b">
         <div className="container mx-auto max-w-7xl px-4 md:px-8 flex justify-center">
           <div className="flex flex-wrap gap-4 justify-center">
