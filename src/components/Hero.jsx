@@ -17,8 +17,8 @@ export default function Hero() {
                   Ek bar purchase kro aur 3 sal k liye books ki tension khatam..<br />
                   <span className="text-primary">AURA bna rhe...sbse mangte firne ki zarurt nhi hai ab</span>
                 </h1>
-                <p className="text-xl text-foreground mb-2 max-w-2xl leading-relaxed">
-                  Assignment likhna ho ya fir exam aane vali ho, Bohot se mere bhai-behen, apne friends ko call krenge aur request krna start krenge "Books ki Photo bhej de yarr🙏" (Samne vala bhejega nhi ya fir bohot WAIT krvata hai...AURA Negative🔻+ Ijjat🔻), ya fir groups me dhundega ki koi ek-do subject ki free ki pdf upload krde, past papers mil jaye...ab vo sare problems ko khatam krne k liye hmne YD App bnai hai..jo aapko ek coffee ki price me sari books provide krta hai
+                <p className="text-xl text-foreground mb-10 max-w-2xl leading-relaxed">
+                  Ek dost se photo maangna, ek group mein PDF dhoondna... ab wo sab chhodo. Neeche dekho kaise 👇
                 </p>
               </div>
             </div>
@@ -61,11 +61,11 @@ export default function Hero() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="flex flex-col gap-2">
                 <span className="text-3xl font-display font-extrabold text-navy">₹125 <span className="text-primary text-base font-semibold">/ semester</span></span>
-                <span className="text-sm md:text-base text-muted-foreground">Any Single Semester · All Subjects · Validity till Exams End of that particular semester</span>
+                <span className="text-sm md:text-base text-muted-foreground">Any Single Semester · All Subjects · 6 Months Validity</span>
               </div>
               <div className="flex flex-col gap-2">
-                <span className="text-3xl font-display font-extrabold text-navy flex items-center gap-2">₹499 <span className="text-amber-600 text-xs font-bold bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wide">Best Plan</span></span>
-                <span className="text-sm md:text-base text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity - Buy once & sare books ki tension khatam</span>
+                <span className="text-3xl font-display font-extrabold text-navy flex items-center gap-2">₹499 <span className="text-amber-600 text-xs font-bold bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wide">Launching Soon</span></span>
+                <span className="text-sm md:text-base text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity</span>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* CTA Buttons — moved here, after the highlights banner */}
+      {/* CTA Buttons — after the highlights banner */}
       <div className="bg-white py-10 border-b">
         <div className="container mx-auto max-w-7xl px-4 md:px-8 flex justify-center">
           <div className="flex flex-wrap gap-4 justify-center">
