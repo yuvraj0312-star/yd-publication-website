@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Ticker from './components/Ticker';
 import Hero from './components/Hero';
-import ChatStory from './components/ChatStory';
 import About from './components/About';
 import Products from './components/Products';
 import Poll from './components/Poll';
@@ -35,7 +34,6 @@ export default function App() {
       <Ticker items={announcements} />
       <Navbar />
       <Hero />
-      <ChatStory />
       <About />
       <Products products={products} />
       <Poll />
