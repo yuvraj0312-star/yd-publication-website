@@ -1,89 +1,100 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Check, CheckCheck, RotateCcw, Download } from 'lucide-react';
 
-const STEPS = [
-  { screen: 'A', type: 'header', name: 'Aryan', sub: 'online' },
-  { screen: 'A', type: 'sent', text: 'Bhai Stats ki notes ki photo bhej dena thoda 🙏', tick: 'sent', wait: 700 },
-  { screen: 'A', type: 'tick-update', tick: 'delivered', wait: 900 },
-  { screen: 'A', type: 'typing', wait: 1800 },
-  { screen: 'A', type: 'typing-stop', wait: 1400 },
-  { screen: 'A', type: 'tick-update', tick: 'seen', meta: 'Seen 11:52 PM', wait: 1200 },
-  { screen: 'A', type: 'caption', text: 'AURA –40 🔻 (bohot der wait karwaya, reply hi nahi aaya)', tone: 'bad', wait: 2200 },
-
-  { screen: 'B', type: 'header', name: 'B.Com Sem 3 🎓', sub: '38 members' },
-  { screen: 'B', type: 'sent', text: 'Guys, Cost Accounting ki PDF kisi ke paas hai kya? 🙏', tick: 'seen', wait: 900 },
-  { screen: 'B', type: 'received', name: 'Priya', color: 'bg-rose-100 text-rose-600', text: 'Maine to paiso se li thi yaar, free mein kaise doon 😅', wait: 1400 },
-  { screen: 'B', type: 'received', name: 'Karan', color: 'bg-amber-100 text-amber-600', text: '+1, mujhe bhi chahiye thi 🙈', wait: 1200 },
-  { screen: 'B', type: 'caption', text: 'IJJAT –30 😶 (koi PDF nahi mili, sab apna bacha rahe hai)', tone: 'bad', wait: 2200 },
-
-  { screen: 'C', type: 'header', name: 'YD Publication', sub: 'Official', brand: true },
-  { screen: 'C', type: 'received', name: 'YD', color: 'bg-primary/10 text-primary', text: 'Ruk ja bhai, tension mat le 😌', wait: 1100 },
-  { screen: 'C', type: 'received', name: 'YD', color: 'bg-primary/10 text-primary', text: 'Sem ki saari Books + Summary + Past Papers — bas ek coffee ki price mein ☕📚', wait: 1400 },
-  { screen: 'C', type: 'card', wait: 900 },
-  { screen: 'C', type: 'caption', text: 'AURA fully recharged 💯🔥', tone: 'good', wait: 400 },
+// Each scene is its own "screen" — it fully replaces the one before it.
+// type: 'sent' (you), 'reaction' (cutaway: their face + real thought), 'received' (YD), 'card', 'badge'
+const SCENES = [
+  {
+    key: 'A',
+    header: { name: 'Aryan', sub: 'online' },
+    beats: [
+      { type: 'sent', text: 'Bhai Stats ki notes ki photo bhej dena thoda 🙏', hold: 800 },
+      { type: 'reaction', face: '😏', name: 'Aryan', bg: 'from-amber-100 to-orange-50', ring: 'ring-amber-300', thought: 'Ye firse maangne aaya... thoda wait karwate hai isko 😌', hold: 1500 },
+      { type: 'badge', text: 'AURA –40 🔻', tone: 'bad', hold: 1200 },
+    ],
+  },
+  {
+    key: 'B',
+    header: { name: 'B.Com Sem 3 🎓', sub: '38 members' },
+    beats: [
+      { type: 'sent', text: 'Guys, Cost Accounting ki PDF kisi ke paas hai kya? 🙏', hold: 800 },
+      { type: 'reaction', face: '🙄', name: 'Priya', bg: 'from-rose-100 to-pink-50', ring: 'ring-rose-300', thought: 'Maine to paiso se li thi... free mein kyun doon? 😅', hold: 1400 },
+      { type: 'reaction', face: '🙈', name: 'Karan', bg: 'from-amber-100 to-yellow-50', ring: 'ring-amber-300', thought: '+1, mujhe bhi chahiye thi... par hai kisi ke paas nahi 🤷', hold: 1300 },
+      { type: 'badge', text: 'IJJAT –30 😶', tone: 'bad', hold: 1200 },
+    ],
+  },
+  {
+    key: 'C',
+    header: { name: 'YD Publication', sub: 'Official', brand: true },
+    beats: [
+      { type: 'received', text: 'Ruk ja bhai, tension mat le 😌', hold: 1000 },
+      { type: 'received', text: 'Sem ki saari Books + Summary + Past Papers — bas ek coffee ki price mein ☕📚', hold: 1300 },
+      { type: 'card', hold: 900 },
+      { type: 'badge', text: 'AURA fully recharged 💯🔥', tone: 'good', confetti: true, hold: 300 },
+    ],
+  },
 ];
 
-function TypingDots() {
-  return (
-    <span className="inline-flex gap-1 items-center px-4 py-3 rounded-2xl rounded-bl-sm bg-muted">
-      <span className="yd-dot" style={{ animationDelay: '0ms' }}></span>
-      <span className="yd-dot" style={{ animationDelay: '150ms' }}></span>
-      <span className="yd-dot" style={{ animationDelay: '300ms' }}></span>
-    </span>
-  );
-}
-
 export default function ChatStory() {
-  const [visible, setVisible] = useState(0);
+  const [sceneIdx, setSceneIdx] = useState(-1);
+  const [beatIdx, setBeatIdx] = useState(0);
   const [done, setDone] = useState(false);
-  const [ticks, setTicks] = useState({});
-  const [showTyping, setShowTyping] = useState(false);
+  const [confetti, setConfetti] = useState([]);
   const wrapRef = useRef(null);
   const timers = useRef([]);
   const hasStarted = useRef(false);
 
   const clearTimers = () => { timers.current.forEach(clearTimeout); timers.current = []; };
 
-  const play = useCallback(() => {
-    clearTimers();
-    setVisible(0);
-    setDone(false);
-    setShowTyping(false);
-    setTicks({});
-    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const burstConfetti = () => {
+    const colors = ['#2E75B6', '#FFD700', '#1F3864', '#22c55e', '#3b82f6'];
+    const pieces = Array.from({ length: 24 }).map((_, i) => ({
+      id: i, left: 50 + (Math.random() * 60 - 30), color: colors[i % colors.length],
+      dx: (Math.random() * 2 - 1) * 140, dy: -(80 + Math.random() * 160), rot: Math.random() * 500 - 250, delay: Math.random() * 0.1,
+    }));
+    setConfetti(pieces);
+    setTimeout(() => setConfetti([]), 1400);
+  };
 
-    if (reduceMotion) {
-      setVisible(STEPS.length);
-      setDone(true);
-      setTicks({ a: 'seen' });
-      return;
-    }
-
+  const playScene = useCallback((idx) => {
+    if (idx >= SCENES.length) { setDone(true); return; }
+    setSceneIdx(idx);
+    setBeatIdx(0);
+    const scene = SCENES[idx];
     let elapsed = 0;
-    STEPS.forEach((step, i) => {
-      elapsed += step.wait || 800;
+    scene.beats.forEach((beat, i) => {
+      elapsed += beat.hold;
       const t = setTimeout(() => {
-        if (step.type === 'typing') setShowTyping(true);
-        if (step.type === 'typing-stop') setShowTyping(false);
-        if (step.type === 'tick-update') setTicks((p) => ({ ...p, a: step.tick, meta: step.meta }));
-        setVisible(i + 1);
-        if (i === STEPS.length - 1) setDone(true);
+        setBeatIdx(i + 1);
+        if (beat.confetti) burstConfetti();
+        if (i === scene.beats.length - 1) {
+          const t2 = setTimeout(() => playScene(idx + 1), 450);
+          timers.current.push(t2);
+        }
       }, elapsed);
       timers.current.push(t);
     });
   }, []);
 
-  // Start playback once, the first time the card scrolls into view.
+  const play = useCallback(() => {
+    clearTimers();
+    setDone(false);
+    setConfetti([]);
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      setSceneIdx(SCENES.length - 1);
+      setBeatIdx(SCENES[SCENES.length - 1].beats.length);
+      setDone(true);
+      return;
+    }
+    playScene(0);
+  }, [playScene]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasStarted.current) {
-            hasStarted.current = true;
-            play();
-          }
-        });
-      },
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasStarted.current) { hasStarted.current = true; play(); }
+      }),
       { threshold: 0.3 }
     );
     if (wrapRef.current) observer.observe(wrapRef.current);
@@ -91,28 +102,24 @@ export default function ChatStory() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [play]);
 
-  // Only clear pending timers when the component truly unmounts.
   useEffect(() => () => clearTimers(), []);
 
-  const shown = STEPS.slice(0, visible);
-  const currentHeader = [...shown].reverse().find((s) => s.type === 'header');
+  const scene = sceneIdx >= 0 ? SCENES[sceneIdx] : null;
+  const beats = scene ? scene.beats.slice(0, beatIdx) : [];
 
-  const TickIcon = ({ state }) => {
-    if (state === 'sent') return <Check className="h-3.5 w-3.5 text-white/70" />;
-    if (state === 'delivered') return <CheckCheck className="h-3.5 w-3.5 text-white/70" />;
-    if (state === 'seen') return <CheckCheck className="h-3.5 w-3.5 text-blue-300" />;
-    return null;
-  };
+  const TickIcon = () => <CheckCheck className="h-3.5 w-3.5 text-blue-300" />;
 
   return (
-    <section ref={wrapRef} className="bg-muted py-12 border-y">
+    <section ref={wrapRef} className="bg-muted py-12 border-y overflow-hidden">
       <style>{`
-        @keyframes ydDotBounce { 0%,60%,100% { transform: translateY(0); opacity: .4; } 30% { transform: translateY(-4px); opacity: 1; } }
-        .yd-dot { width: 6px; height: 6px; border-radius: 999px; background: #64748b; display:inline-block; animation: ydDotBounce 1s infinite ease-in-out; }
-        .yd-bubble-in { animation: ydBubbleIn .35s ease-out; }
-        @keyframes ydBubbleIn { from { opacity:0; transform: translateY(8px) scale(.97); } to { opacity:1; transform: translateY(0) scale(1); } }
-        .yd-caption-in { animation: ydCaptionIn .4s ease-out; }
-        @keyframes ydCaptionIn { from { opacity:0; transform: scale(.9); } to { opacity:1; transform: scale(1); } }
+        .yd-scene-in { animation: ydSceneIn .35s ease-out; }
+        @keyframes ydSceneIn { from { opacity:0; transform: translateX(16px); } to { opacity:1; transform: translateX(0); } }
+        .yd-beat-in { animation: ydBeatIn .3s ease-out; }
+        @keyframes ydBeatIn { from { opacity:0; transform: translateY(8px) scale(.96); } to { opacity:1; transform: translateY(0) scale(1); } }
+        .yd-badge-in { animation: ydBadgeIn .4s cubic-bezier(.34,1.56,.64,1); }
+        @keyframes ydBadgeIn { from { opacity:0; transform: scale(.7); } to { opacity:1; transform: scale(1); } }
+        .yd-confetti { position:absolute; border-radius:2px; opacity:0; animation: ydConfetti 1.3s ease-out forwards; }
+        @keyframes ydConfetti { 0% { opacity:1; transform: translate(0,0) rotate(0); } 100% { opacity:0; transform: translate(var(--dx),var(--dy)) rotate(var(--rot)); } }
       `}</style>
 
       <div className="container mx-auto max-w-7xl px-4 md:px-8">
@@ -121,54 +128,76 @@ export default function ChatStory() {
           <h3 className="text-3xl md:text-4xl font-display font-extrabold text-navy">Har student ki yehi kahani hoti hai</h3>
         </div>
 
-        <div className="max-w-md mx-auto bg-white rounded-3xl border border-border shadow-xl overflow-hidden">
-          <div className="flex items-center gap-3 px-5 py-4 border-b border-border bg-white sticky top-0 z-10">
-            <div className={`h-10 w-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${currentHeader?.brand ? 'bg-navy text-white' : 'bg-primary/10 text-primary'}`}>
-              {currentHeader?.brand ? 'YD' : (currentHeader?.name?.[0] || '💬')}
+        <div className="max-w-md mx-auto bg-white rounded-3xl border border-border shadow-xl overflow-hidden relative">
+          {/* progress segments */}
+          <div className="flex gap-1.5 px-4 pt-3">
+            {SCENES.map((s, i) => (
+              <div key={s.key} className="h-1 flex-1 rounded-full bg-border overflow-hidden">
+                <div className={`h-full bg-primary transition-all duration-500 ${i < sceneIdx || done ? 'w-full' : i === sceneIdx ? 'w-full' : 'w-0'}`}></div>
+              </div>
+            ))}
+          </div>
+
+          {/* header */}
+          <div className="flex items-center gap-3 px-5 py-4 border-b border-border">
+            <div className={`h-10 w-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0 ${scene?.header.brand ? 'bg-navy text-white' : 'bg-primary/10 text-primary'}`}>
+              {scene?.header.brand ? 'YD' : (scene?.header.name?.[0] || '💬')}
             </div>
             <div className="min-w-0">
-              <p className="font-bold text-navy text-sm truncate">{currentHeader?.name || 'Kahani shuru ho rahi hai...'}</p>
-              <p className="text-xs text-muted-foreground truncate">{currentHeader?.sub || ''}</p>
+              <p className="font-bold text-navy text-sm truncate">{scene?.header.name || 'Kahani shuru ho rahi hai...'}</p>
+              <p className="text-xs text-muted-foreground truncate">{scene?.header.sub || ''}</p>
             </div>
           </div>
 
-          <div className="px-5 py-6 space-y-3 min-h-[380px] bg-gradient-to-b from-muted/40 to-white">
-            {shown.map((step, i) => {
-              if (step.type === 'header') return null;
+          {/* scene content — fully swaps, never stacks */}
+          <div key={sceneIdx} className="px-5 py-6 space-y-3 min-h-[340px] flex flex-col justify-center yd-scene-in relative">
+            {confetti.length > 0 && (
+              <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
+                {confetti.map((c) => (
+                  <span key={c.id} className="yd-confetti" style={{ left: `${c.left}%`, top: '30%', width: '7px', height: '4px', background: c.color, animationDelay: `${c.delay}s`, '--dx': `${c.dx}px`, '--dy': `${c.dy}px`, '--rot': `${c.rot}deg` }}></span>
+                ))}
+              </div>
+            )}
 
-              if (step.type === 'sent' || step.type === 'tick-update') {
-                if (step.type === 'tick-update') return null;
+            {beats.map((beat, i) => {
+              if (beat.type === 'sent') {
                 return (
-                  <div key={i} className="flex justify-end yd-bubble-in">
-                    <div className="max-w-[75%] bg-navy text-white px-4 py-2.5 rounded-2xl rounded-br-sm text-sm leading-relaxed">
-                      {step.text}
+                  <div key={i} className="flex justify-end yd-beat-in">
+                    <div className="max-w-[80%] bg-navy text-white px-4 py-2.5 rounded-2xl rounded-br-sm text-sm leading-relaxed">
+                      {beat.text}
                       <div className="flex items-center justify-end gap-1 mt-1">
-                        {ticks.meta && <span className="text-[10px] text-white/60">{ticks.meta}</span>}
-                        <TickIcon state={ticks.a || step.tick} />
+                        <TickIcon />
                       </div>
                     </div>
                   </div>
                 );
               }
-
-              if (step.type === 'received') {
+              if (beat.type === 'reaction') {
                 return (
-                  <div key={i} className="flex justify-start items-end gap-2 yd-bubble-in">
-                    <div className={`h-7 w-7 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0 ${step.color}`}>
-                      {step.name[0]}
+                  <div key={i} className={`yd-beat-in bg-gradient-to-br ${beat.bg} border border-border rounded-2xl p-4 flex items-center gap-3`}>
+                    <div className={`h-14 w-14 rounded-full bg-white flex items-center justify-center text-3xl shrink-0 ring-4 ${beat.ring}`}>
+                      {beat.face}
                     </div>
-                    <div className="max-w-[75%] bg-muted text-navy px-4 py-2.5 rounded-2xl rounded-bl-sm text-sm leading-relaxed">
-                      <p className="text-[11px] font-bold text-muted-foreground mb-0.5">{step.name}</p>
-                      {step.text}
+                    <div className="min-w-0">
+                      <p className="text-[11px] font-bold text-navy/60 uppercase tracking-wide mb-0.5">{beat.name} soch raha/rahi hai...</p>
+                      <p className="text-sm font-semibold text-navy leading-snug">{beat.thought}</p>
                     </div>
                   </div>
                 );
               }
-
-              if (step.type === 'card') {
+              if (beat.type === 'received') {
                 return (
-                  <div key={i} className="flex justify-start yd-bubble-in">
-                    <div className="max-w-[80%] bg-white border border-border rounded-2xl rounded-bl-sm overflow-hidden shadow-sm">
+                  <div key={i} className="flex justify-start yd-beat-in">
+                    <div className="max-w-[80%] bg-primary/10 text-navy px-4 py-2.5 rounded-2xl rounded-bl-sm text-sm leading-relaxed font-medium">
+                      {beat.text}
+                    </div>
+                  </div>
+                );
+              }
+              if (beat.type === 'card') {
+                return (
+                  <div key={i} className="flex justify-start yd-beat-in">
+                    <div className="max-w-[85%] w-full bg-white border border-border rounded-2xl overflow-hidden shadow-sm">
                       <div className="h-1.5 w-full bg-gradient-to-r from-primary to-blue-400"></div>
                       <div className="p-4">
                         <p className="font-bold text-navy text-sm mb-1">YD App</p>
@@ -181,28 +210,20 @@ export default function ChatStory() {
                   </div>
                 );
               }
-
-              if (step.type === 'caption') {
+              if (beat.type === 'badge') {
                 return (
-                  <div key={i} className="flex justify-center py-2 yd-caption-in">
-                    <span className={`text-xs font-bold px-4 py-2 rounded-full ${step.tone === 'good' ? 'bg-green-100 text-green-700' : 'bg-red-50 text-red-500'}`}>
-                      {step.text}
+                  <div key={i} className="flex justify-center py-1 yd-badge-in">
+                    <span className={`text-sm font-extrabold px-5 py-2.5 rounded-full ${beat.tone === 'good' ? 'bg-green-100 text-green-700' : 'bg-red-50 text-red-500'}`}>
+                      {beat.text}
                     </span>
                   </div>
                 );
               }
-
               return null;
             })}
 
-            {showTyping && (
-              <div className="flex justify-start">
-                <TypingDots />
-              </div>
-            )}
-
-            {visible === 0 && (
-              <p className="text-center text-xs text-muted-foreground pt-24">Neeche scroll karo, kahani yahin shuru hogi 👇</p>
+            {sceneIdx === -1 && (
+              <p className="text-center text-xs text-muted-foreground">Neeche scroll karo, kahani yahin shuru hogi 👇</p>
             )}
           </div>
 
