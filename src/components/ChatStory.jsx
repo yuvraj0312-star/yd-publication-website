@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Check, CheckCheck, RotateCcw, Download } from 'lucide-react';
+import { Check, CheckCheck, RotateCcw, Download, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Each scene is its own "screen" — it fully replaces the one before it.
 // type: 'sent' (you), 'reaction' (cutaway: their face + real thought), 'received' (YD), 'card', 'badge'
@@ -76,6 +76,15 @@ export default function ChatStory() {
     });
   }, []);
 
+  const goToScene = (idx) => {
+    if (idx < 0 || idx >= SCENES.length) return;
+    clearTimers();
+    setConfetti([]);
+    setSceneIdx(idx);
+    setBeatIdx(SCENES[idx].beats.length);
+    setDone(idx === SCENES.length - 1);
+  };
+
   const play = useCallback(() => {
     clearTimers();
     setDone(false);
@@ -149,6 +158,26 @@ export default function ChatStory() {
             </div>
           </div>
 
+          {/* prev/next arrows to review any chat again */}
+          {sceneIdx > 0 && (
+            <button
+              onClick={() => goToScene(sceneIdx - 1)}
+              aria-label="Previous chat"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-30 h-8 w-8 rounded-full bg-white/95 border border-border shadow-md flex items-center justify-center text-navy hover:bg-muted transition-colors"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+          )}
+          {sceneIdx > -1 && sceneIdx < SCENES.length - 1 && (
+            <button
+              onClick={() => goToScene(sceneIdx + 1)}
+              aria-label="Next chat"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-30 h-8 w-8 rounded-full bg-white/95 border border-border shadow-md flex items-center justify-center text-navy hover:bg-muted transition-colors"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          )}
+
           {/* scene content — fully swaps, never stacks */}
           <div key={sceneIdx} className="px-5 py-6 space-y-3 min-h-[340px] flex flex-col justify-center yd-scene-in relative">
             {confetti.length > 0 && (
@@ -201,9 +230,9 @@ export default function ChatStory() {
                       <div className="h-1.5 w-full bg-gradient-to-r from-primary to-blue-400"></div>
                       <div className="p-4">
                         <p className="font-bold text-navy text-sm mb-1">YD App</p>
-                        <p className="text-xs text-muted-foreground mb-3">₹125 se shuru · Sem 1 to 6</p>
+                        <p className="text-xs text-muted-foreground mb-3">✅ Verified &amp; Tested Books + IMP Books — bas ₹125 poore semester ke liye</p>
                         <a href="#products" className="flex items-center justify-center gap-2 w-full bg-navy text-white text-xs font-bold py-2.5 rounded-xl hover:bg-primary transition-colors">
-                          <Download className="h-3.5 w-3.5" /> Explore Study Material
+                          <Download className="h-3.5 w-3.5" /> Download Now
                         </a>
                       </div>
                     </div>
