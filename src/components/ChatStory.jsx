@@ -10,7 +10,7 @@ const SCENES = [
     beats: [
       { type: 'sent', text: 'Bhai Stats ki notes ki photo bhej dena thoda 🙏', hold: 1100 },
       { type: 'reaction', face: '😏', name: 'Aryan', bg: 'from-amber-100 to-orange-50', ring: 'ring-amber-300', thought: 'Ye firse maangne aaya... thoda wait karwate hai isko 😌', hold: 2100 },
-      { type: 'badge', text: 'AURA –40 🔻', tone: 'bad', hold: 1800 },
+      { type: 'badge', text: 'AURA + Ijjat –50% 🔻', tone: 'bad', hold: 1800 },
     ],
   },
   {
@@ -20,15 +20,15 @@ const SCENES = [
       { type: 'sent', text: 'Guys, Cost Accounting ki PDF kisi ke paas hai kya? 🙏', hold: 1100 },
       { type: 'reaction', face: '🙄', name: 'Priya', bg: 'from-rose-100 to-pink-50', ring: 'ring-rose-300', thought: 'Maine to paiso se li thi... free mein kyun doon? 😅', hold: 2000 },
       { type: 'reaction', face: '🙈', name: 'Karan', bg: 'from-amber-100 to-yellow-50', ring: 'ring-amber-300', thought: '+1, mujhe bhi chahiye thi... par hai kisi ke paas nahi 🤷', hold: 1900 },
-      { type: 'badge', text: 'IJJAT –30 😶', tone: 'bad', hold: 1800 },
+      { type: 'badge', text: 'Aura + IJJAT Down –40% 😶', tone: 'bad', hold: 1800 },
     ],
   },
   {
     key: 'C',
     header: { name: 'YD Publication', sub: 'Official', brand: true },
     beats: [
-      { type: 'received', text: 'Ruk ja bhai, tension mat le 😌', hold: 1500 },
-      { type: 'received', text: 'Sem ki saari Books + Summary + Past Papers — bas ek coffee ki price mein ☕📚', hold: 1900 },
+      { type: 'received', text: 'Ruk ja bhai, tension mat le 😌...AURA khrab nai hone dunga dusro k samne', hold: 1500 },
+      { type: 'received', text: 'Sem ki saari Books + Summary + Past Papers + Past Papers — bas ek coffee ki price mein ☕📚', hold: 1900 },
       { type: 'card', hold: 1400 },
       { type: 'badge', text: 'AURA fully recharged 💯🔥', tone: 'good', confetti: true, hold: 600 },
     ],
