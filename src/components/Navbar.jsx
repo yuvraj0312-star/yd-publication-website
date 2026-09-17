@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="container mx-auto max-w-7xl flex h-16 items-center justify-between px-4 md:px-8">
         <a href="#" className="flex items-center gap-2 font-bold text-xl font-display">
           <img src={logo} alt="YD Connect Logo" className="h-8 w-8 rounded" />
-          <span>YD Connect (YD App) </span>
+          <span>YD App (by YD Connect)</span>
         </a>
         
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
