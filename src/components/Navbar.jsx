@@ -16,8 +16,8 @@ export default function Navbar() {
     <nav className={`sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md text-navy transition-all duration-300 ${scrolled ? 'shadow-sm' : ''}`}>
       <div className="container mx-auto max-w-7xl flex h-16 items-center justify-between px-4 md:px-8">
         <a href="#" className="flex items-center gap-2 font-bold text-xl font-display">
-          <img src={logo} alt="YD Publication Logo" className="h-8 w-8 rounded" />
-          <span>YD Publication (YD App) </span>
+          <img src={logo} alt="YD Connect Logo" className="h-8 w-8 rounded" />
+          <span>YD Connect (YD App) </span>
         </a>
         
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">

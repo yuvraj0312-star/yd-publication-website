@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
             <div className="flex items-center gap-2 font-bold text-xl font-display">
-              <img src={logo} alt="YD Publication Logo" className="h-8 w-8 rounded" />
-              <span className="text-navy">YD Publication</span>
+              <img src={logo} alt="YD Connect Logo" className="h-8 w-8 rounded" />
+              <span className="text-navy">YD Connect</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed pr-4">
               Empowering Gujarat University students with high-quality, affordable study materials. Learn. Grow.
@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground font-medium">
-          <p>© 2026 YD Publication. All rights reserved.</p>
+          <p>© 2026 YD Connect. All rights reserved.</p>
           <p>Made with <span className="text-red-500">❤️</span> for Students</p>
         </div>
       </div>

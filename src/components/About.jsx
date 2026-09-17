@@ -37,10 +37,10 @@ export default function About() {
       {/* About Intro */}
       <div className="grid gap-10 lg:grid-cols-2 mb-16">
         <div>
-          <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-4">About YD Publication</h2>
+          <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-4">About YD Connect</h2>
           <h3 className="text-4xl md:text-5xl font-display font-extrabold mb-6 text-navy leading-tight">Learn. Earn. Grow.</h3>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            YD Publication is an Ahmedabad-based edtech initiative designed specifically for Gujarat University B.Com students. We create concise, syllabus-aligned books, summary notes and exam papers at the most affordable price — so you can prepare confidently, even if you open the book a week before exams.
+            YD Connect is an Ahmedabad-based edtech initiative designed specifically for Gujarat University B.Com students. We create concise, syllabus-aligned books, summary notes and exam papers at the most affordable price — so you can prepare confidently, even if you open the book a week before exams.
           </p>
         </div>
         <div className="space-y-4">
@@ -76,7 +76,7 @@ export default function About() {
 
       {/* Benefits Section */}
       <div className="mb-4">
-        <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">Why Choose YD Publication</h2>
+        <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">Why Choose YD Connect</h2>
         <h3 className="text-3xl md:text-4xl font-display font-extrabold text-navy mb-6">Benefits at a Glance</h3>
         <div className="grid gap-3 sm:grid-cols-2">
           {benefits.map((b, i) => (

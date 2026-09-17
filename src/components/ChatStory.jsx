@@ -25,7 +25,7 @@ const SCENES = [
   },
   {
     key: 'C',
-    header: { name: 'YD Publication', sub: 'Official', brand: true },
+    header: { name: 'YD Connect', sub: 'Official', brand: true },
     beats: [
       { type: 'received', text: 'Ruk ja, tension mat le 😌...AURA khrab nai hona chahiye dusro k samne', hold: 1500 },
       { type: 'received', text: 'Sem ki saari Books + IMP Question Books + Past Papers — bas ek coffee ki price mein ☕📚', hold: 1900 },
