@@ -12,7 +12,7 @@ export default function Products({ products = [] }) {
     { id: 3, sem: 'Sem 3', name: 'Sem 3 B.com Syllabus', price: 125, active: true, subjects: ['Cost Accounting 1', 'Corporate Accounting', 'Taxation 1', 'Basics of Statistics', 'Common Employability Skills', 'English & Communication', 'Indic Knowledge System'] },
     { id: 4, sem: 'Sem 4', name: 'Sem 4 B.com Syllabus', price: 125, active: true, subjects: ['Cost Accounting 2', 'Taxation 2', 'Cloud Accounting 2', 'Industrial Statistics', 'Fundamental of Communication in English 1', 'Essential Marketing Communication', 'GREAT EPICS OF INDIA (IKS) - Mahabharat & Ramayan'] },
     { id: 5, sem: 'Sem 5', name: 'Sem 5 B.com Syllabus', price: 125, active: true, subjects: ['Cost Accounting 3', 'Management Accounting 1', 'Auditing 1', 'Operation Research 1', 'Operation Research 2', 'English Language Comprehension'] },
-    { id: 6, sem: 'Sem 6', name: 'Sem 6 B.com Syllabus', price: 125, active: false, subjects: ['Auditing 2', 'Corporate Accounting 2', 'Sampling in Research', 'Fundamental of Communication in English 2', 'Economics (Indian Economy 2)', 'Legal & Business Environment'] },
+    { id: 6, sem: 'Sem 6', name: 'Sem 6 B.com Syllabus', price: 125, active: true, subjects: ['Auditing 2', 'Corporate Accounting 2', 'Sampling in Research', 'Fundamental of Communication in English 2', 'Economics (Indian Economy 2)', 'Legal & Business Environment'] },
   ];
 
   const data = products.length ? products : fallbackProducts;
@@ -61,7 +61,7 @@ export default function Products({ products = [] }) {
               <div className="p-6 border-b border-muted">
                 <div className="flex justify-between items-start mb-3">
                   <span className="inline-flex items-center rounded-md bg-muted px-2.5 py-0.5 text-xs font-semibold text-navy">{p.sem}</span>
-                  {!p.active && <span className="inline-flex items-center rounded-md bg-amber-500 px-2.5 py-0.5 text-xs font-bold text-white">Added Soon</span>}
+                  {!p.active && <span className="inline-flex items-center rounded-md bg-amber-500 px-2.5 py-0.5 text-xs font-bold text-white"></span>}
                 </div>
                 <h3 className="text-xl font-bold text-navy mb-2">{p.name}</h3>
                 <div className="text-sm text-muted-foreground mt-2 space-y-1">
@@ -82,8 +82,8 @@ export default function Products({ products = [] }) {
                       Check on App
                     </button>
                   ) : (
-                    <button disabled className="w-full bg-muted text-muted-foreground rounded-xl py-2.5 text-sm font-bold cursor-not-allowed">
-                      All subjects added soon
+                    <button className="w-full bg-navy text-white hover:bg-navy-light rounded-xl py-2.5 text-sm font-bold transition-colors">
+                      Check on App
                     </button>
                   )}
                 </div>
