@@ -9,14 +9,14 @@ export default function Hero() {
         <div className="container mx-auto max-w-7xl px-4 md:px-8 pt-10 md:pt-20 pb-10">
           <div className="max-w-3xl animate-fade-in-up">
             <p className="text-primary font-bold mb-4 tracking-wide uppercase text-sm">
-              Gujarat University Graduation Students — Ahmedabad
+              Gujarat University Graduation Students
             </p>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] font-display">
-              Ek bar purchase kro aur 3 sal k liye books ki tension khatam..<br />
-              <span className="text-primary">AURA bna rhe...sbse mangte firne ki zarurt nhi hai ab</span>
+              1 Book = Rs. 15<br />
+              <span className="text-primary">Complete your B.com books search at YD App</span>
             </h1>
             <p className="text-xl text-foreground max-w-2xl leading-relaxed">
-              Ek dost se photo maangna, ek group mein PDF dhoondna... ab wo sab chhodo. Neeche dekho kaise 👇
+             Books k Photo maangna aur PDF mangna... ab wo sab chhodo. Neeche dekho kaise 👇
             </p>
           </div>
         </div>
