@@ -7,12 +7,12 @@ export default function Products({ products = [] }) {
   const sems = ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6'];
 
   const fallbackProducts = [
-    { id: 1, sem: 'Sem 1', name: 'Sem 1 Complete Study Pack', price: 125, active: true, subjects: ['Financial Accounting 1', 'Financial Accounting 2', 'Basic of Statistics', 'Gandhian Economics & Rural Development', 'Vavharik Hindi', 'Writing & Presentation Skills', 'Indic Knowledge'] },
-    { id: 2, sem: 'Sem 2', name: 'Sem 2 Complete Study Pack', price: 125, active: true, subjects: ['Cloud Accounting 1', 'Financial Accounting 3', 'Probability and Discrete Statistics', 'Economics (Rural Development)', 'Practical English', 'Personality & Leadership Development', 'Indic Knowledge Tradition'] },
-    { id: 3, sem: 'Sem 3', name: 'Sem 3 Complete Study Pack', price: 125, active: true, subjects: ['Cost Accounting 1', 'Corporate Accounting', 'Taxation 1', 'Basics of Statistics', 'Common Employability Skills', 'English & Communication', 'Indic Knowledge System'] },
-    { id: 4, sem: 'Sem 4', name: 'Sem 4 Complete Study Pack', price: 125, active: true, subjects: ['Cost Accounting 2', 'Taxation 2', 'Cloud Accounting 2', 'Industrial Statistics', 'Fundamental of Communication in English 1', 'Essential Marketing Communication', 'IKS - Mahabharat & Ramayan'] },
-    { id: 5, sem: 'Sem 5', name: 'Sem 5 Complete Study Pack', price: 125, active: true, subjects: ['Cost Accounting 3', 'Management Accounting 1', 'Auditing 1', 'Operation Research 1', 'Operation Research 2', 'English Language Comprehension'] },
-    { id: 6, sem: 'Sem 6', name: 'Sem 6 Complete Study Pack', price: 125, active: false, subjects: ['Auditing 2', 'Corporate Accounting 2', 'Sampling in Research', 'Fundamental of Communication in English 2', 'And all other subjects'] },
+    { id: 1, sem: 'Sem 1', name: 'Sem 1 B.com Syllabus', price: 125, active: true, subjects: ['Financial Accounting 1', 'Financial Accounting 2', 'Basic of Statistics', 'Gandhian Economics & Rural Development', 'Vavharik Hindi', 'Writing & Presentation Skills', 'Indic Knowledge'] },
+    { id: 2, sem: 'Sem 2', name: 'Sem 2 B.com Syllabus', price: 125, active: true, subjects: ['Cloud Accounting 1', 'Financial Accounting 3', 'Probability and Discrete Statistics', 'Economics (Rural Development)', 'Practical English', 'Personality & Leadership Development', 'Indic Knowledge Tradition', 'Talent Management'] },
+    { id: 3, sem: 'Sem 3', name: 'Sem 3 B.com Syllabus', price: 125, active: true, subjects: ['Cost Accounting 1', 'Corporate Accounting', 'Taxation 1', 'Basics of Statistics', 'Common Employability Skills', 'English & Communication', 'Indic Knowledge System'] },
+    { id: 4, sem: 'Sem 4', name: 'Sem 4 B.com Syllabus', price: 125, active: true, subjects: ['Cost Accounting 2', 'Taxation 2', 'Cloud Accounting 2', 'Industrial Statistics', 'Fundamental of Communication in English 1', 'Essential Marketing Communication', 'GREAT EPICS OF INDIA (IKS) - Mahabharat & Ramayan'] },
+    { id: 5, sem: 'Sem 5', name: 'Sem 5 B.com Syllabus', price: 125, active: true, subjects: ['Cost Accounting 3', 'Management Accounting 1', 'Auditing 1', 'Operation Research 1', 'Operation Research 2', 'English Language Comprehension'] },
+    { id: 6, sem: 'Sem 6', name: 'Sem 6 B.com Syllabus', price: 125, active: false, subjects: ['Auditing 2', 'Corporate Accounting 2', 'Sampling in Research', 'Fundamental of Communication in English 2', 'Economics (Indian Economy 2)', 'Legal & Business Environment'] },
   ];
 
   const data = products.length ? products : fallbackProducts;
@@ -25,8 +25,8 @@ export default function Products({ products = [] }) {
     <section id="products" className="bg-muted pt-8 pb-12 border-y scroll-mt-10">
       <div className="container mx-auto max-w-7xl px-4 md:px-8">
         <div className="text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-display font-extrabold mb-4 text-navy">Our Study Material (English & Gujarati)</h2>
-          <p className="text-muted-foreground">Full Books, Summary Books, IMP Books & Past Papers</p>
+          <h2 className="text-3xl md:text-4xl font-display font-extrabold mb-4 text-navy">Semester wise B.com Syllabus</h2>
+          <p className="text-muted-foreground">Summary Books, IMP Questions Books & Past Papers (NEP)</p>
         </div>
 
         {/* Search */}
@@ -73,7 +73,7 @@ export default function Products({ products = [] }) {
               <div className="p-6 pt-4 bg-gray-50/50 rounded-b-2xl">
                 <div className="flex items-center justify-between mb-4">
                   <div className="text-lg font-bold text-navy">
-                    {p.price ? `₹${p.price}` : '—'} <span className="text-xs font-normal text-muted-foreground">/ sem access</span>
+                    {p.price ? `₹${p.price}` : '—'} <span className="text-xs font-normal text-muted-foreground">/ Limited Time Offer</span>
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -104,7 +104,7 @@ export default function Products({ products = [] }) {
             <div>
               <span className="inline-flex items-center rounded-md bg-primary px-3 py-1 text-xs font-bold text-white mb-4 uppercase tracking-wider">Best Value</span>
               <h3 className="text-3xl font-display font-bold mb-4">All 6 Semester Bundle</h3>
-              <p className="text-white/70 mb-6 leading-relaxed">Get all subjects for all 6 semesters at the best price. Complete exam preparation in one go.</p>
+              <p className="text-white/70 mb-6 leading-relaxed">Get all subjects (Full Bcom Syllabus) for all semesters at the best price. Complete exam preparation in one App.</p>
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-4xl font-display font-bold text-primary">₹499</span>
                 <span className="text-amber-300 text-sm font-bold bg-amber-400/10 px-2 py-1 rounded">3 Years Validity</span>
@@ -112,17 +112,17 @@ export default function Products({ products = [] }) {
               <button className="bg-white text-navy hover:bg-white/90 rounded-xl font-bold h-14 px-8 w-full sm:w-auto transition-colors">
                 Check on App
               </button>
-              <p className="text-white/50 text-xs mt-4 leading-relaxed">
+              <p className="text-white/50 text-s mt-4 leading-relaxed">
                 Both plans are live on the app — ₹125 for any single semester (validity till end of university exams) & ₹499 for all semesters (validity 3 years from purchase).
               </p>
             </div>
             <div className="grid grid-cols-2 gap-y-4 gap-x-2">
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All Subject Books</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Summary Books</div>
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Past Papers</div>
+              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Past Papers (NEP)</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> IMP Books</div>
               <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All 6 Semesters</div>
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> English or Gujarati</div>
+              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> English</div>
             </div>
           </div>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/20 blur-[100px] -z-0 rounded-full"></div>
