@@ -5,7 +5,7 @@ const benefits = [
     icon: <Tag className="h-5 w-5" />,
     iconBg: 'bg-emerald-500 text-navy mb-6',
     cardBg: 'bg-emerald-50 border-emerald-100',
-    title: 'All semester access just at ₹499',
+    title: 'All semester = just at ₹499',
     sub: 'Market mein 1 semester ki price ₹700 hai',
   },
   {
