@@ -3,9 +3,9 @@ import { BookOpen, CheckCircle2, Tag, Smartphone, GraduationCap, Users } from 'l
 const benefits = [
   {
     icon: <Tag className="h-5 w-5" />,
-    iconBg: 'bg-emerald-500 text-white',
+    iconBg: 'bg-emerald-500 text-navy mb-6',
     cardBg: 'bg-emerald-50 border-emerald-100',
-    title: 'Sare semester access sirf ₹499 mein',
+    title: 'All semester access just at ₹499',
     sub: 'Market mein 1 semester ki price ₹700 hai',
   },
   {
@@ -76,7 +76,7 @@ export default function About() {
 
       {/* Benefits Section */}
       <div className="mb-4">
-        <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">Why Choose YD Connect</h2>
+        <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">Why Choose YD App</h2>
         <h3 className="text-3xl md:text-4xl font-display font-extrabold text-navy mb-6">Benefits</h3>
         <div className="grid gap-3 sm:grid-cols-2">
           {benefits.map((b, i) => (
