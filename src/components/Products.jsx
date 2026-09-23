@@ -73,7 +73,7 @@ export default function Products({ products = [] }) {
               <div className="p-6 pt-4 bg-gray-50/50 rounded-b-2xl">
                 <div className="flex items-center justify-between mb-4">
                   <div className="text-lg font-bold text-navy">
-                    {p.price ? `₹${p.price}` : '—'} <span className="text-xs font-normal text-muted-foreground">/ Limited Time Offer</span>
+                    {p.price ? `₹${p.price}` : '—'} <span className="text-s font-normal text-muted-foreground">/ All Subjects</span>
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
