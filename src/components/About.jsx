@@ -5,28 +5,28 @@ const benefits = [
     icon: <Tag className="h-5 w-5" />,
     iconBg: 'bg-emerald-500 text-white',
     cardBg: 'bg-emerald-50 border-emerald-100',
-    title: 'Sare 6 sem sirf ₹499 mein',
-    sub: 'Market mein uski price ₹5200 hai',
+    title: 'Sare semester access sirf ₹499 mein',
+    sub: 'Market mein 1 semester ki price ₹700 hai',
   },
   {
     icon: <Smartphone className="h-5 w-5" />,
     iconBg: 'bg-blue-500 text-white',
     cardBg: 'bg-blue-50 border-blue-100',
-    title: 'Phone mein, kabhi bhi',
-    sub: 'Books carry karne ki zarurat nahi!',
+    title: 'Books carry karne ki zarurat nahi',
+    sub: 'Phone mein, kabhi bhi use kro',
   },
   {
     icon: <GraduationCap className="h-5 w-5" />,
     iconBg: 'bg-purple-500 text-white',
     cardBg: 'bg-purple-50 border-purple-100',
-    title: 'Har exam ke liye ready',
-    sub: 'Assignment ho, ya Internal exams, ya fir University exams!',
+    title: 'Assignment ho, ya Internal exams, ya fir University exams!',
+    sub: 'Har exam ke liye ready',
   },
   {
     icon: <Users className="h-5 w-5" />,
     iconBg: 'bg-amber-500 text-white',
     cardBg: 'bg-amber-50 border-amber-100',
-    title: 'External students ke liye best',
+    title: 'Regular student ho ya External student, best for everyone',
     sub: 'Ek bar purchase kro aur 3 sal k liye books ki tension nhi',
   },
 ];
@@ -40,7 +40,7 @@ export default function About() {
           <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-4">About YD Connect</h2>
           <h3 className="text-4xl md:text-5xl font-display font-extrabold mb-6 text-navy leading-tight">Learn. Earn. Grow.</h3>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            YD Connect is an Ahmedabad-based edtech initiative designed specifically for Gujarat University B.Com students. We create concise, syllabus-aligned books, summary notes and exam papers at the most affordable price — so you can prepare confidently, even if you open the book a week before exams.
+            YD Connect is an Ahmedabad-based edtech initiative designed specifically for Gujarat University students. Our organisation is here for students. We create concise, syllabus-aligned books at the affordable price — so you can prepare confidently, even if you open the book a week before exams.
           </p>
         </div>
         <div className="space-y-4">
@@ -50,7 +50,7 @@ export default function About() {
             </div>
             <div>
               <h4 className="text-xl font-bold mb-2 text-navy">Exam-Ready Study Material</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">Full books, summary books, IMP books and past papers for all 6 semesters.</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">Books, Summary books, IMP books and past papers for all semesters.</p>
             </div>
           </div>
           <div className="flex gap-6 p-6 rounded-2xl bg-muted border border-border transition-all hover:shadow-md hover:-translate-y-1">
@@ -59,7 +59,7 @@ export default function About() {
             </div>
             <div>
               <h4 className="text-xl font-bold mb-2 text-navy">100% Syllabus Covered</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">Mapped strictly to the latest Gujarat University NEP 2020 curriculum for B.Com students.</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">As per the latest Gujarat University NEP curriculum for B.Com students.</p>
             </div>
           </div>
           <div className="flex gap-6 p-6 rounded-2xl bg-muted border border-border transition-all hover:shadow-md hover:-translate-y-1">
@@ -68,7 +68,7 @@ export default function About() {
             </div>
             <div>
               <h4 className="text-xl font-bold mb-2 text-navy">Highly Affordable</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">Any single semester for ₹125. All 6 semesters for just ₹499 with 3 years validity.</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">1 book price is just ₹15.</p>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function About() {
       {/* Benefits Section */}
       <div className="mb-4">
         <h2 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">Why Choose YD Connect</h2>
-        <h3 className="text-3xl md:text-4xl font-display font-extrabold text-navy mb-6">Benefits at a Glance</h3>
+        <h3 className="text-3xl md:text-4xl font-display font-extrabold text-navy mb-6">Benefits</h3>
         <div className="grid gap-3 sm:grid-cols-2">
           {benefits.map((b, i) => (
             <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl border ${b.cardBg} hover:shadow-md transition-all`}>
