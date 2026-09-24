@@ -10,7 +10,7 @@ const testimonials = [
     color: "bg-primary/10 text-primary",
   },
   {
-    text: "Solved past papers helped me understand the GU exam pattern perfectly. The ₹125 price is totally worth it for the whole semester.",
+    text: "Solved past papers helped me understand the GU exam pattern perfectly. The ₹99 price is totally worth it for the whole semester.",
     name: "Khushal Sharma",
     college: "Lokmanya College of Commerce",
     initial: "K",
