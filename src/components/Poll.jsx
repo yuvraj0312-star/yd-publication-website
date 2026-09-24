@@ -62,7 +62,7 @@ export default function Poll() {
   }, [open, voted]);
 
   // Public total starts at 1589 and increases by exactly 1 per real vote (shared via JSONBin).
-  // Split always shown ~72% for ₹499 (b) and ~28% for ₹125 (a), regardless of actual choice.
+  // Split always shown ~72% for ₹499 (b) and ~28% for ₹99 (a), regardless of actual choice.
   async function getPublicCounts(picked) {
     let total = 1589;
     if (BIN_ID !== 'YOUR_BIN_ID') {
@@ -181,7 +181,7 @@ export default function Poll() {
                   >
                     <div className="flex justify-between items-center">
                       <div>
-                        <p className="text-xl font-display font-extrabold text-navy">₹125</p>
+                        <p className="text-xl font-display font-extrabold text-navy">₹99</p>
                         <p className="text-xs text-muted-foreground mt-0.5">One Semester · 6 Months</p>
                       </div>
                       <span className="text-primary font-bold text-sm bg-primary/10 px-4 py-2 rounded-xl group-hover:bg-primary group-hover:text-white transition-colors">Vote</span>
@@ -205,7 +205,7 @@ export default function Poll() {
                   <div className={`p-4 rounded-2xl border-2 ${choice === 'a' ? 'border-primary bg-primary/5' : 'border-border'}`}>
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-bold text-navy text-sm flex items-center gap-1.5">
-                        ₹125 · One Semester {choice === 'a' && <CheckCircle2 className="h-4 w-4 text-primary" />}
+                        ₹99 · One Semester {choice === 'a' && <CheckCircle2 className="h-4 w-4 text-primary" />}
                       </span>
                       <span className="font-extrabold text-navy">{aPct}%</span>
                     </div>
