@@ -7,12 +7,12 @@ export default function Products({ products = [] }) {
   const sems = ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6'];
 
   const fallbackProducts = [
-    { id: 1, sem: 'Sem 1', name: 'Sem 1 B.com Syllabus', price: 125, active: true, subjects: ['Financial Accounting 1', 'Financial Accounting 2', 'Basic of Statistics', 'Gandhian Economics & Rural Development', 'Vavharik Hindi', 'Writing & Presentation Skills', 'Indic Knowledge'] },
-    { id: 2, sem: 'Sem 2', name: 'Sem 2 B.com Syllabus', price: 125, active: true, subjects: ['Cloud Accounting 1', 'Financial Accounting 3', 'Probability and Discrete Statistics', 'Economics (Rural Development)', 'Practical English', 'Personality & Leadership Development', 'Indic Knowledge Tradition', 'Talent Management'] },
-    { id: 3, sem: 'Sem 3', name: 'Sem 3 B.com Syllabus', price: 125, active: true, subjects: ['Cost Accounting 1', 'Corporate Accounting', 'Taxation 1', 'Basics of Statistics', 'Common Employability Skills', 'English & Communication', 'Indic Knowledge System'] },
-    { id: 4, sem: 'Sem 4', name: 'Sem 4 B.com Syllabus', price: 125, active: true, subjects: ['Cost Accounting 2', 'Taxation 2', 'Cloud Accounting 2', 'Industrial Statistics', 'Fundamental of Communication in English 1', 'Essential Marketing Communication', 'GREAT EPICS OF INDIA (IKS) - Mahabharat & Ramayan'] },
-    { id: 5, sem: 'Sem 5', name: 'Sem 5 B.com Syllabus', price: 125, active: true, subjects: ['Cost Accounting 3', 'Management Accounting 1', 'Auditing 1', 'Operation Research 1', 'Operation Research 2', 'English Language Comprehension'] },
-    { id: 6, sem: 'Sem 6', name: 'Sem 6 B.com Syllabus', price: 125, active: true, subjects: ['Auditing 2', 'Corporate Accounting 2', 'Sampling in Research', 'Fundamental of Communication in English 2', 'Economics (Indian Economy 2)', 'Legal & Business Environment'] },
+    { id: 1, sem: 'Sem 1', name: 'Sem 1 B.com Syllabus', price: 99, active: true, subjects: ['Financial Accounting 1', 'Financial Accounting 2', 'Basic of Statistics', 'Gandhian Economics & Rural Development', 'Vavharik Hindi', 'Writing & Presentation Skills', 'Indic Knowledge'] },
+    { id: 2, sem: 'Sem 2', name: 'Sem 2 B.com Syllabus', price: 99, active: true, subjects: ['Cloud Accounting 1', 'Financial Accounting 3', 'Probability and Discrete Statistics', 'Economics (Rural Development)', 'Practical English', 'Personality & Leadership Development', 'Indic Knowledge Tradition', 'Talent Management'] },
+    { id: 3, sem: 'Sem 3', name: 'Sem 3 B.com Syllabus', price: 99, active: true, subjects: ['Cost Accounting 1', 'Corporate Accounting', 'Taxation 1', 'Basics of Statistics', 'Common Employability Skills', 'English & Communication', 'Indic Knowledge System'] },
+    { id: 4, sem: 'Sem 4', name: 'Sem 4 B.com Syllabus', price: 99, active: true, subjects: ['Cost Accounting 2', 'Taxation 2', 'Cloud Accounting 2', 'Industrial Statistics', 'Fundamental of Communication in English 1', 'Essential Marketing Communication', 'GREAT EPICS OF INDIA (IKS) - Mahabharat & Ramayan'] },
+    { id: 5, sem: 'Sem 5', name: 'Sem 5 B.com Syllabus', price: 99, active: true, subjects: ['Cost Accounting 3', 'Management Accounting 1', 'Auditing 1', 'Operation Research 1', 'Operation Research 2', 'English Language Comprehension'] },
+    { id: 6, sem: 'Sem 6', name: 'Sem 6 B.com Syllabus', price: 99, active: true, subjects: ['Auditing 2', 'Corporate Accounting 2', 'Sampling in Research', 'Fundamental of Communication in English 2', 'Economics (Indian Economy 2)', 'Legal & Business Environment'] },
   ];
 
   const data = products.length ? products : fallbackProducts;
@@ -113,7 +113,7 @@ export default function Products({ products = [] }) {
                 Check on App
               </button>
               <p className="text-white/50 text-s mt-4 leading-relaxed">
-                Both plans are live on the app — ₹125 for any single semester (validity till end of university exams) & ₹499 for all semesters (validity 3 years from purchase).
+                Both plans are live on the app — ₹99 for any single semester (validity till end of university exams) & ₹499 for all semesters (validity 3 years from purchase).
               </p>
             </div>
             <div className="grid grid-cols-2 gap-y-4 gap-x-2">
