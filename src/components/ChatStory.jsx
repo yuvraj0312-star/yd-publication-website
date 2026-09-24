@@ -230,7 +230,7 @@ export default function ChatStory() {
                       <div className="h-1.5 w-full bg-gradient-to-r from-primary to-blue-400"></div>
                       <div className="p-4">
                         <p className="font-bold text-navy text-sm mb-1">YD App</p>
-                        <p className="text-xs text-muted-foreground mb-3">✅ Verified &amp; Tested Books + IMP Books — bas ₹125 poore semester ke liye</p>
+                        <p className="text-xs text-muted-foreground mb-3">✅ Verified &amp; Tested Books + IMP Books — bas ₹99 poore semester ke liye</p>
                         <a href="#products" className="flex items-center justify-center gap-2 w-full bg-navy text-white text-xs font-bold py-2.5 rounded-xl hover:bg-primary transition-colors">
                           <Download className="h-3.5 w-3.5" /> Download Now
                         </a>
