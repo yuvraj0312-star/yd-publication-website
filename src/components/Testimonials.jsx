@@ -4,8 +4,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const testimonials = [
   {
     text: 'Summary books ne sach mein bacha liya! Exam se sirf 10 din pehle padhai shuru ki aur Statistics mein 75% aa gaye.',
-    name: 'Raj Patel',
-    college: 'GLS University',
+    name: 'Raj Maheriya',
+    college: 'C. U. Shah College',
     initial: 'R',
   },
   {
