@@ -1,26 +1,8 @@
-import { Bell } from 'lucide-react';
-
-export default function Ticker({ items =[] }) {
-  const data = items.length ? items :[
-      { text: 'Get books at reasonable price!' },
-  ];
-  
+export default function Ticker() {
   return (
-    <div className="bg-primary text-white py-2 overflow-hidden whitespace-nowrap border-b border-white/10 relative flex">
-      <div className="flex animate-marquee gap-12 items-center min-w-full pl-4 pr-12">
-        {data.map((item, i) => (
-          <div key={i} className="flex items-center gap-2 text-sm font-bold">
-            <Bell className="h-4 w-4" /> {item.text}
-          </div>
-        ))}
-      </div>
-      <div className="flex animate-marquee gap-12 items-center min-w-full pl-4 pr-12" aria-hidden="true">
-        {data.map((item, i) => (
-          <div key={`dup-${i}`} className="flex items-center gap-2 text-sm font-bold">
-            <Bell className="h-4 w-4" /> {item.text}
-          </div>
-        ))}
-      </div>
+    <div className="bg-navy text-white px-4 py-2.5 flex items-center justify-center gap-2.5 text-[13px] font-bold text-center">
+      <span className="h-2 w-2 rounded-full bg-yd shrink-0 yd-blink" aria-hidden="true"></span>
+      <span>Exam season is here — study smart, start today</span>
     </div>
   );
 }

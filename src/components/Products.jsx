@@ -1,138 +1,81 @@
 import { useState, useMemo } from 'react';
-import { Search, CheckCircle2 } from 'lucide-react';
+import { Search } from 'lucide-react';
 
-export default function Products({ products = [] }) {
-  const [filter, setFilter] = useState('Sem 1');
+const SEMESTERS = [
+  { sem: 'Sem 1', subjects: ['Financial Accounting 1', 'Financial Accounting 2', 'Basic of Statistics', 'Gandhian Economics & Rural Development', 'Vavharik Hindi', 'Writing & Presentation Skills', 'Indic Knowledge'] },
+  { sem: 'Sem 2', subjects: ['Cloud Accounting 1', 'Financial Accounting 3', 'Probability and Discrete Statistics', 'Economics (Rural Development)', 'Practical English', 'Personality & Leadership Development', 'Indic Knowledge Tradition', 'Talent Management'] },
+  { sem: 'Sem 3', subjects: ['Cost Accounting 1', 'Corporate Accounting', 'Taxation 1', 'Basics of Statistics', 'Common Employability Skills', 'English & Communication', 'Indic Knowledge System'] },
+  { sem: 'Sem 4', subjects: ['Cost Accounting 2', 'Taxation 2', 'Cloud Accounting 2', 'Industrial Statistics', 'Fundamental of Communication in English 1', 'Essential Marketing Communication', 'GREAT EPICS OF INDIA (IKS) - Mahabharat & Ramayan'] },
+  { sem: 'Sem 5', subjects: ['Cost Accounting 3', 'Management Accounting 1', 'Auditing 1', 'Operation Research 1', 'Operation Research 2', 'English Language Comprehension'] },
+  { sem: 'Sem 6', subjects: ['Auditing 2', 'Corporate Accounting 2', 'Sampling in Research', 'Fundamental of Communication in English 2', 'Economics (Indian Economy 2)', 'Legal & Business Environment'] },
+];
+
+export default function Products() {
+  const [active, setActive] = useState('Sem 1');
   const [q, setQ] = useState('');
-  const sems = ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6'];
 
-  const fallbackProducts = [
-    { id: 1, sem: 'Sem 1', name: 'Sem 1 B.com Syllabus', price: 99, active: true, subjects: ['Financial Accounting 1', 'Financial Accounting 2', 'Basic of Statistics', 'Gandhian Economics & Rural Development', 'Vavharik Hindi', 'Writing & Presentation Skills', 'Indic Knowledge'] },
-    { id: 2, sem: 'Sem 2', name: 'Sem 2 B.com Syllabus', price: 99, active: true, subjects: ['Cloud Accounting 1', 'Financial Accounting 3', 'Probability and Discrete Statistics', 'Economics (Rural Development)', 'Practical English', 'Personality & Leadership Development', 'Indic Knowledge Tradition', 'Talent Management'] },
-    { id: 3, sem: 'Sem 3', name: 'Sem 3 B.com Syllabus', price: 99, active: true, subjects: ['Cost Accounting 1', 'Corporate Accounting', 'Taxation 1', 'Basics of Statistics', 'Common Employability Skills', 'English & Communication', 'Indic Knowledge System'] },
-    { id: 4, sem: 'Sem 4', name: 'Sem 4 B.com Syllabus', price: 99, active: true, subjects: ['Cost Accounting 2', 'Taxation 2', 'Cloud Accounting 2', 'Industrial Statistics', 'Fundamental of Communication in English 1', 'Essential Marketing Communication', 'GREAT EPICS OF INDIA (IKS) - Mahabharat & Ramayan'] },
-    { id: 5, sem: 'Sem 5', name: 'Sem 5 B.com Syllabus', price: 99, active: true, subjects: ['Cost Accounting 3', 'Management Accounting 1', 'Auditing 1', 'Operation Research 1', 'Operation Research 2', 'English Language Comprehension'] },
-    { id: 6, sem: 'Sem 6', name: 'Sem 6 B.com Syllabus', price: 99, active: true, subjects: ['Auditing 2', 'Corporate Accounting 2', 'Sampling in Research', 'Fundamental of Communication in English 2', 'Economics (Indian Economy 2)', 'Legal & Business Environment'] },
-  ];
-
-  const data = products.length ? products : fallbackProducts;
-
-  const filtered = useMemo(() => {
-    return data.filter(p => p.sem === filter && p.name.toLowerCase().includes(q.toLowerCase()));
-  }, [data, filter, q]);
+  // With a search term, show matching subjects across all semesters.
+  const shown = useMemo(() => {
+    const term = q.trim().toLowerCase();
+    if (!term) return SEMESTERS.filter(s => s.sem === active);
+    return SEMESTERS
+      .map(s => ({ ...s, subjects: s.subjects.filter(x => x.toLowerCase().includes(term)) }))
+      .filter(s => s.subjects.length);
+  }, [active, q]);
 
   return (
-    <section id="products" className="bg-muted pt-8 pb-12 border-y scroll-mt-10">
-      <div className="container mx-auto max-w-7xl px-4 md:px-8">
-        <div className="text-center mb-6">
-          <h2 className="text-3xl md:text-4xl font-display font-extrabold mb-4 text-navy">Semester wise B.com Syllabus</h2>
-          <p className="text-muted-foreground">Summary Books, IMP Questions Books & Past Papers (NEP)</p>
+    <section id="products" className="px-4 py-9 md:py-14 scroll-mt-20">
+      <div className="mx-auto max-w-3xl flex flex-col gap-3.5">
+        <div>
+          <h2 className="font-display font-extrabold text-[26px] md:text-4xl leading-tight">Semester-wise B.Com Syllabus</h2>
+          <p className="text-sm md:text-base text-muted-foreground mt-1">Books, IMP Books and Past Papers (NEP)</p>
         </div>
 
-        {/* Search */}
-        <div className="max-w-xl mx-auto mb-8 relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <label className="flex items-center gap-2.5 bg-soft rounded-2xl h-[50px] px-3.5 focus-within:ring-2 focus-within:ring-primary/40">
+          <Search className="h-[18px] w-[18px] text-muted-foreground shrink-0" />
           <input
             type="text"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Search your subject (e.g. Statistics)"
-            className="w-full pl-12 pr-4 h-14 rounded-2xl bg-white border border-border shadow-sm text-navy focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
+            aria-label="Search your subject"
+            className="flex-1 bg-transparent text-[15px] text-navy placeholder:text-muted-foreground outline-none"
           />
-        </div>
+        </label>
 
-        {/* Semester Filter */}
-        <div className="flex justify-center gap-2 mb-8 flex-wrap">
-          {sems.map(s => (
-            <button
-              key={s}
-              onClick={() => setFilter(s)}
-              className={`rounded-full px-6 py-2 text-sm font-semibold border transition-colors ${filter === s ? 'bg-navy text-white border-navy' : 'bg-white text-navy border-border hover:bg-muted'}`}
-            >
-              {s}
-            </button>
-          ))}
-        </div>
-
-        {/* Products Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map(p => (
-            <div key={p.id || p._id} className={`rounded-2xl border bg-white transition-all ${p.active ? 'hover:shadow-xl hover:-translate-y-1' : 'opacity-75'}`}>
-              <div className="p-6 border-b border-muted">
-                <div className="flex justify-between items-start mb-3">
-                  <span className="inline-flex items-center rounded-md bg-muted px-2.5 py-0.5 text-xs font-semibold text-navy">{p.sem}</span>
-                  {!p.active && <span className="inline-flex items-center rounded-md bg-amber-500 px-2.5 py-0.5 text-xs font-bold text-white"></span>}
-                </div>
-                <h3 className="text-xl font-bold text-navy mb-2">{p.name}</h3>
-                <div className="text-sm text-muted-foreground mt-2 space-y-1">
-                  {(p.subjects || []).map((sub, idx) => (
-                    <p key={idx}>• {sub}</p>
-                  ))}
-                </div>
-              </div>
-              <div className="p-6 pt-4 bg-gray-50/50 rounded-b-2xl">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-lg font-bold text-navy">
-                    {p.price ? `₹${p.price}` : '—'} <span className="text-s font-normal text-muted-foreground">/ All Subjects</span>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  {p.active ? (
-                    <button className="w-full bg-navy text-white hover:bg-navy-light rounded-xl py-2.5 text-sm font-bold transition-colors">
-                      Check on App
-                    </button>
-                  ) : (
-                    <button className="w-full bg-navy text-white hover:bg-navy-light rounded-xl py-2.5 text-sm font-bold transition-colors">
-                      Check on App
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {filtered.length === 0 && (
-          <div className="col-span-full text-center py-12">
-            <p className="text-muted-foreground text-lg">No products found matching your criteria.</p>
+        {!q.trim() && (
+          <div className="flex gap-2 overflow-x-auto no-scrollbar -mx-4 px-4 pb-0.5">
+            {SEMESTERS.map(({ sem }) => (
+              <button
+                key={sem}
+                onClick={() => setActive(sem)}
+                className={`shrink-0 min-h-[40px] px-4 rounded-full text-[13.5px] font-bold border transition-colors ${active === sem ? 'bg-navy text-white border-navy' : 'bg-white text-navy border-[#DDE1EC] hover:bg-soft'}`}
+              >
+                {sem}
+              </button>
+            ))}
           </div>
         )}
 
-        {/* Bundle Banner */}
-        <div className="mt-12 bg-navy text-white p-8 md:p-12 rounded-3xl relative overflow-hidden">
-          <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <span className="inline-flex items-center rounded-md bg-primary px-3 py-1 text-xs font-bold text-white mb-4 uppercase tracking-wider">Best Value</span>
-              <h3 className="text-3xl font-display font-bold mb-4">All 6 Semester Bundle</h3>
-              <p className="text-white/70 mb-6 leading-relaxed">Get all subjects (Full Bcom Syllabus) for all semesters at the best price. Complete exam preparation in one App.</p>
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-display font-bold text-primary">₹499</span>
-                <span className="text-amber-300 text-sm font-bold bg-amber-400/10 px-2 py-1 rounded">3 Years Validity</span>
-              </div>
-              <button className="bg-white text-navy hover:bg-white/90 rounded-xl font-bold h-14 px-8 w-full sm:w-auto transition-colors">
-                Check on App
-              </button>
-              <p className="text-white/50 text-s mt-4 leading-relaxed">
-                Both plans are live on the app — ₹99 for any single semester (validity till end of university exams) & ₹499 for all semesters (validity 3 years from purchase).
-              </p>
+        {shown.map(s => (
+          <div key={s.sem} className="border border-[#E3E7F2] rounded-[18px] p-[18px]">
+            <div className="flex justify-between items-center">
+              <h3 className="font-display font-bold text-lg">Semester {s.sem.replace('Sem ', '')}</h3>
+              <span className="text-xs font-bold text-muted-foreground">{s.subjects.length} subjects</span>
             </div>
-            <div className="grid grid-cols-2 gap-y-4 gap-x-2">
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All Subject Books</div>
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Summary Books</div>
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> Past Papers (NEP)</div>
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> IMP Books</div>
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> All 6 Semesters</div>
-              <div className="flex items-center gap-2 text-sm text-white/80"><CheckCircle2 className="h-4 w-4 text-primary" /> English</div>
-            </div>
+            <ul className="mt-2.5">
+              {s.subjects.map(sub => (
+                <li key={sub} className="flex items-center gap-2.5 py-2.5 border-t border-[#F0F2F7] text-[14.5px] font-semibold">
+                  <span className="h-1.5 w-1.5 rounded-full bg-yd shrink-0"></span>{sub}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/20 blur-[100px] -z-0 rounded-full"></div>
-        </div>
+        ))}
 
-        <div className="mt-8 text-center">
-          <p className="text-muted-foreground">
-            Do you have any query? <a href="#contact" className="text-primary font-bold hover:underline">Contact us →</a>
-          </p>
-        </div>
+        {shown.length === 0 && (
+          <p className="text-center text-muted-foreground py-8">No subject found. Try another name.</p>
+        )}
       </div>
     </section>
   );

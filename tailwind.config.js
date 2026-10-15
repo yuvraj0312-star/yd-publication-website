@@ -4,23 +4,26 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Outfit", "sans-serif"],
+        sans: ["Manrope", "sans-serif"],
+        display: ["Sora", "sans-serif"],
+        gujarati: ["'Hind Vadodara'", "Manrope", "sans-serif"],
       },
       colors: {
-        primary: "#2563eb",
+        primary: "#1E3AA8",
+        yd: "#FFC72C",
+        soft: "#F6F7FB",
         navy: {
-          DEFAULT: "#0a192f",
-          light: "#112240",
-          lighter: "#233554",
+          DEFAULT: "#0F1F5C",
+          light: "#1A2B70",
+          lighter: "#233170",
         },
         muted: {
           DEFAULT: "#f8fafc",
-          foreground: "#64748b",
+          foreground: "#5B6385",
         },
         border: "#e2e8f0",
         background: "#ffffff",
-        foreground: "#0a192f",
+        foreground: "#0F1F5C",
       },
       animation: {
         marquee: "marquee 30s linear infinite",

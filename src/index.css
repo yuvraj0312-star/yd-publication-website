@@ -5,7 +5,7 @@
 @layer base {
   body {
     @apply antialiased text-navy bg-white;
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
     overflow-x: hidden;
   }
   h1,
@@ -14,7 +14,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Outfit", sans-serif;
+    font-family: "Sora", sans-serif;
   }
 }
 
@@ -26,4 +26,26 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+/* Study-themed micro animations */
+@keyframes ydFlip { 0%,15% { transform: rotateY(0deg); } 55%,100% { transform: rotateY(-180deg); } }
+@keyframes ydDraw { 0% { stroke-dashoffset: 260; } 40%,100% { stroke-dashoffset: 0; } }
+@keyframes ydRise { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes ydFill { 0% { width: 0%; } 70%,100% { width: 100%; } }
+@keyframes ydPop { 0% { transform: scale(0); } 70% { transform: scale(1.15); } 100% { transform: scale(1); } }
+@keyframes ydBlink { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+.yd-flip { transform-origin: left center; animation: ydFlip 3.2s ease-in-out infinite; }
+.yd-draw { stroke-dasharray: 260; animation: ydDraw 3s ease-out infinite; }
+.yd-rise { opacity: 0; }
+.yd-in .yd-rise { animation: ydRise .6s ease-out both; }
+.yd-pop { transform: scale(0); }
+.yd-in .yd-pop { animation: ydPop .5s ease-out both; }
+.yd-fill { width: 0; }
+.yd-in .yd-fill { animation: ydFill 3.5s ease-out infinite; }
+.yd-blink { animation: ydBlink 1.6s ease-in-out infinite; }
+.ruled { background-image: repeating-linear-gradient(0deg, rgba(15,31,92,.07) 0px, rgba(15,31,92,.07) 1px, transparent 1px, transparent 28px); }
+@media (prefers-reduced-motion: reduce) {
+  .yd-flip, .yd-draw, .yd-blink, .yd-in .yd-fill, .yd-in .yd-rise, .yd-in .yd-pop { animation: none; }
+  .yd-rise { opacity: 1; } .yd-pop { transform: none; } .yd-fill { width: 100%; } .yd-draw { stroke-dashoffset: 0; }
 }
