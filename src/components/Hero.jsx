@@ -1,110 +1,63 @@
-import { Smartphone } from 'lucide-react';
-import ChatStory from './ChatStory';
+const PLAY_URL = 'https://play.google.com/store/apps/details?id=in.ydapp.app';
+
+function PageLines({ accent }) {
+  return (
+    <>
+      <div className={`h-[3px] rounded ${accent ? 'bg-primary w-[70%]' : 'bg-[#C9D0E8]'}`}></div>
+      <div className="h-[3px] rounded bg-[#C9D0E8] w-[85%]"></div>
+      <div className="h-[3px] rounded bg-[#C9D0E8]"></div>
+      <div className="h-[3px] rounded bg-[#C9D0E8] w-[60%]"></div>
+    </>
+  );
+}
 
 export default function Hero() {
   return (
-    <>
-      {/* Headline + Story hook */}
-      <div className="bg-white text-navy border-b">
-        <div className="container mx-auto max-w-7xl px-4 md:px-8 pt-10 md:pt-20 pb-10">
-          <div className="max-w-3xl animate-fade-in-up">
-            <p className="text-primary font-bold mb-4 tracking-wide uppercase text-sm">
-              Gujarat University Graduation Students
-            </p>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] font-display">
-              1 Book = Rs. 15<br />
-              <span className="text-primary">Complete your B.com books search at YD App</span>
-            </h1>
-            <p className="text-xl text-foreground max-w-2xl leading-relaxed">
-             Books k Photo maangna aur PDF mangna... ab wo sab chhodo. Neeche dekho kaise 👇
-            </p>
+    <header className="bg-yd ruled px-4 pt-7 pb-8 md:pt-12 md:pb-14">
+      <div className="mx-auto max-w-xl flex flex-col items-center gap-[18px] text-center">
+        <p className="bg-navy text-white font-bold text-[13px] tracking-wide px-4 py-2 rounded-full">
+          For B.Com Students · Gujarat University
+        </p>
+
+        {/* Animated book — a page turns */}
+        <div aria-hidden="true" className="relative flex justify-center w-[132px] h-[84px]" style={{ perspective: '600px' }}>
+          <div className="w-16 h-20 bg-white rounded-l-lg rounded-r-sm flex flex-col gap-[7px] px-2.5 py-3.5 shadow-[inset_-6px_0_0_#E8EBF5,0_6px_0_rgba(15,31,92,.15)]">
+            <PageLines />
           </div>
+          <div className="w-16 h-20 bg-white rounded-r-lg rounded-l-sm flex flex-col gap-[7px] px-2.5 py-3.5 shadow-[inset_6px_0_0_#E8EBF5,0_6px_0_rgba(15,31,92,.15)]">
+            <PageLines accent />
+          </div>
+          <div className="absolute left-[66px] top-0 w-16 h-20 bg-[#F7F8FC] border border-[#E3E7F2] rounded-r-lg rounded-l-sm yd-flip"></div>
         </div>
+
+        <div className="w-full bg-white rounded-3xl px-5 pt-6 pb-7 shadow-[0_10px_0_rgba(15,31,92,.12)]">
+          <h1 className="font-display">
+            <span className="block font-bold text-xl md:text-2xl text-primary">All Semester</span>
+            <span className="block font-extrabold text-[58px] md:text-7xl leading-none tracking-[-1.5px] text-primary mt-1">Books</span>
+            <span className="block font-extrabold text-[72px] md:text-[88px] leading-none tracking-[-2px] text-navy">FREE!</span>
+          </h1>
+          <svg aria-hidden="true" width="220" height="18" viewBox="0 0 220 18" fill="none" className="block mx-auto mt-1">
+            <path d="M4 12 C 50 3, 120 3, 216 10" stroke="#FFC72C" strokeWidth="6" strokeLinecap="round" className="yd-draw" />
+          </svg>
+        </div>
+
+        <div>
+          <p className="font-extrabold text-base">English Medium available</p>
+          <p className="font-gujarati font-semibold text-[15px] text-[#2E3560] mt-0.5">ગુજરાતી માધ્યમ જલ્દી ઉપલબ્ધ થશે</p>
+        </div>
+
+        <a
+          href={PLAY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full max-w-[420px] min-h-[56px] bg-navy text-white rounded-2xl flex items-center justify-center gap-3 font-display font-bold text-[17px] hover:bg-primary transition-colors shadow-lg"
+        >
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="#FFC72C">
+            <path d="M5 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5A1 1 0 0 0 5 3.5z" />
+          </svg>
+          Download on Google Play
+        </a>
       </div>
-
-      {/* Story — the very next thing, nothing in between */}
-      <ChatStory />
-
-      {/* App Card + Pricing */}
-      <div className="bg-white text-navy border-b">
-        <div className="container mx-auto max-w-7xl px-4 md:px-8 py-10">
-          <div className="max-w-md mx-auto animate-fade-in-up">
-            <div className="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-border shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-blue-400"></div>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                  <Smartphone className="h-6 w-6" />
-                </div>
-                <h3 className="text-2xl font-extrabold text-navy">YD App</h3>
-              </div>
-              <p className="text-base font-medium text-navy mb-2">
-                ✅ App is live on <span className="text-primary font-bold">Google Play Store</span>
-              </p>
-              <p className="text-base font-medium text-muted-foreground mb-6">
-                🍎 Coming soon on <span className="font-semibold text-navy">Apple App Store</span>
-              </p>
-              <a
-                href="https://play.google.com/store/apps/details?id=in.ydapp.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full bg-navy text-white font-bold text-base py-3 px-6 rounded-xl hover:bg-primary transition-colors shadow-md"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0">
-                  <path d="M3.18 23.75a1.5 1.5 0 0 1-.68-.16A1.75 1.75 0 0 1 1.5 22V2A1.75 1.75 0 0 1 3 .41L14.09 6.5 3.18 23.75zm1.32-20.6v17.7L13.13 12 4.5 3.15zM15.5 7.59l2.8 1.62-2.8 1.62V7.59zm0 9.2v-3.24l2.8 1.62-2.8 1.62zm4.32-4.79L22 13.41a1 1 0 0 1 0 1.72l-2.18 1.26-3.32-1.92 3.32-1.47zM14.09 6.5 16.27 7.76 4.5 3.15 14.09 6.5zm0 11 2.18 1.26L4.5 20.85l9.59-3.35z"/>
-                </svg>
-                Download on Google Play
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Pricing Strip */}
-        <div className="w-full border-t border-border bg-white/50">
-          <div className="container mx-auto max-w-7xl px-4 md:px-8 py-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              <div className="flex flex-col gap-2">
-                <span className="text-3xl font-display font-extrabold text-navy">₹99 <span className="text-primary text-base font-semibold">/ semester</span></span>
-                <span className="text-sm md:text-base text-muted-foreground">Any Single Semester · All Subjects · 6 Months Validity</span>
-              </div>
-              <div className="flex flex-col gap-2">
-                <span className="text-3xl font-display font-extrabold text-navy flex items-center gap-2">₹499 <span className="text-amber-600 text-xs font-bold bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wide">Best Deal</span></span>
-                <span className="text-sm md:text-base text-muted-foreground">All Semesters (1 to 6) · All Subjects · 3 Years Validity</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Highlights Banner */}
-      <section className="bg-navy py-12">
-        <div className="container mx-auto max-w-7xl px-4 md:px-8">
-          <div className="flex flex-col md:flex-row justify-around items-center gap-8 text-center md:text-left">
-            <div className="space-y-1">
-              <p className="text-primary font-display font-bold text-4xl">600+</p>
-              <p className="text-white/60 text-sm uppercase tracking-widest">Students Bought</p>
-            </div>
-            <div className="h-12 w-px bg-white/10 hidden md:block"></div>
-            <div className="space-y-1">
-              <p className="text-primary font-display font-bold text-4xl">100%</p>
-              <p className="text-white/60 text-sm uppercase tracking-widest">Syllabus Covered</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Buttons */}
-      <div className="bg-white py-10 border-b">
-        <div className="container mx-auto max-w-7xl px-4 md:px-8 flex justify-center">
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#products" className="inline-flex items-center justify-center bg-navy text-white hover:bg-navy-light h-14 px-8 text-lg font-bold rounded-xl transition-all shadow-lg hover:shadow-xl">
-              Explore Study Material
-            </a>
-            <a href="#contact" className="inline-flex items-center justify-center border-2 border-border hover:bg-muted h-14 px-8 text-lg font-medium rounded-xl transition-all">
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </div>
-    </>
+    </header>
   );
 }
