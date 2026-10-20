@@ -41,10 +41,18 @@ export default function Hero() {
           </svg>
         </div>
 
-        <div>
-          <p className="font-extrabold text-base">English Medium available</p>
-          <p className="font-gujarati font-semibold text-[15px] text-[#2E3560] mt-0.5">ગુજરાતી માધ્યમ જલ્દી ઉપલબ્ધ થશે</p>
-        </div>
+        <a
+          href={PLAY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="yd-bounce w-full max-w-[420px] bg-navy text-white rounded-2xl px-4 py-3.5 border-[3px] border-white shadow-[0_8px_0_rgba(15,31,92,.18)]"
+        >
+          <span className="inline-block bg-yd text-navy text-[11.5px] font-extrabold tracking-[1.2px] px-3 py-1 rounded-full">ONLY IN GUJARAT</span>
+          <span className="block font-gujarati font-semibold text-[19px] leading-snug mt-2">ગુજરાતી માધ્યમમાં Books + Past Paper Solutions</span>
+          <span className="block font-extrabold text-[15px] text-yd mt-1">Ready now — get it in YD App →</span>
+        </a>
+
+        <p className="font-extrabold text-base">English + <span className="font-gujarati">ગુજરાતી</span> Medium available</p>
 
         <a
           href={PLAY_URL}

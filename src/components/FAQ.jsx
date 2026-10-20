@@ -3,7 +3,7 @@ import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   { question: 'Are the books as per the NEP syllabus?', answer: 'Yes. All books, IMP books and past papers follow the latest Gujarat University NEP syllabus.' },
-  { question: 'Which mediums are available?', answer: 'Books are available in English medium. Gujarati medium is coming soon. University past papers solutions are available in both Gujarati and English medium.' },
+  { question: 'Which mediums are available?', answer: 'Both English and Gujarati medium. YD App is the only place in Gujarat with Gujarati medium B.Com study material — books and university past paper solutions.' },
   { question: 'Can I study on a tablet?', answer: 'Yes. YD App works on Android phones and tablets.' },
   { question: 'Can I print the notes?', answer: 'No. The content is designed for reading inside YD App to prevent unauthorised sharing, so printing is disabled.' },
 ];
