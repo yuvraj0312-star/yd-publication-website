@@ -34,6 +34,7 @@
 @keyframes ydRise { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
 @keyframes ydFill { 0% { width: 0%; } 70%,100% { width: 100%; } }
 @keyframes ydPop { 0% { transform: scale(0); } 70% { transform: scale(1.15); } 100% { transform: scale(1); } }
+@keyframes ydBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @keyframes ydBlink { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
 .yd-flip { transform-origin: left center; animation: ydFlip 3.2s ease-in-out infinite; }
 .yd-draw { stroke-dasharray: 260; animation: ydDraw 3s ease-out infinite; }
@@ -43,9 +44,11 @@
 .yd-in .yd-pop { animation: ydPop .5s ease-out both; }
 .yd-fill { width: 0; }
 .yd-in .yd-fill { animation: ydFill 3.5s ease-out infinite; }
+.yd-bounce { display: block; animation: ydBounce 1.4s ease-in-out infinite; }
+.yd-bounce:hover { animation-play-state: paused; }
 .yd-blink { animation: ydBlink 1.6s ease-in-out infinite; }
 .ruled { background-image: repeating-linear-gradient(0deg, rgba(15,31,92,.07) 0px, rgba(15,31,92,.07) 1px, transparent 1px, transparent 28px); }
 @media (prefers-reduced-motion: reduce) {
-  .yd-flip, .yd-draw, .yd-blink, .yd-in .yd-fill, .yd-in .yd-rise, .yd-in .yd-pop { animation: none; }
+  .yd-bounce, .yd-flip, .yd-draw, .yd-blink, .yd-in .yd-fill, .yd-in .yd-rise, .yd-in .yd-pop { animation: none; }
   .yd-rise { opacity: 1; } .yd-pop { transform: none; } .yd-fill { width: 100%; } .yd-draw { stroke-dashoffset: 0; }
 }

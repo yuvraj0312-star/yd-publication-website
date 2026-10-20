@@ -62,7 +62,7 @@ export default function Highlights() {
                 <h3 className="font-sans font-extrabold text-[17px]">Books for All Semesters</h3>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   <span className="bg-[#EEF1FA] text-xs font-bold px-2.5 py-1 rounded-lg">English Medium</span>
-                  <span className="bg-[#EEF1FA] font-gujarati text-[12.5px] font-semibold px-2.5 py-1 rounded-lg">ગુજરાતી માધ્યમ જલ્દી ઉપલબ્ધ થશે</span>
+                  <span className="bg-[#EEF1FA] font-gujarati text-[12.5px] font-semibold px-2.5 py-1 rounded-lg">ગુજરાતી માધ્યમ ઉપલબ્ધ</span>
                 </div>
               </div>
             </div>
