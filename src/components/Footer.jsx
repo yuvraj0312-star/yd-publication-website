@@ -9,10 +9,10 @@ export default function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-2 font-bold text-xl font-display">
               <img src={logo} alt="YD Connect Logo" className="h-8 w-8 rounded" />
-              <span className="text-navy">YD Connect</span>
+              <span className="text-navy">YD App <span className="text-muted-foreground font-semibold text-base">(by YD Connect)</span></span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed pr-4">
-              Empowering Gujarat University students with high-quality, affordable study materials. Learn. Grow.
+              Empowering Graduate students with high-quality, affordable study materials. Learn. Earn. Fun.
             </p>
             <div className="flex gap-4">
               <a href="https://www.instagram.com/ydappofficial" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-navy hover:bg-primary hover:text-white transition-all">
